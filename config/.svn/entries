@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="234"
+   name=""
+   committed-date="2008-03-17T20:42:13.362750Z"
+   url="http://www.blueshiftdesign.co.uk:81/svn-repos/this_is_uk/trunk/config"
+   kind="dir"
+   uuid="cf3b00ba-abda-3a43-a663-eef1b33534eb"
+   repos="http://www.blueshiftdesign.co.uk:81/svn-repos"
+   revision="274"/>
+<entry
+   committed-rev="234"
+   name="routes.rb.old"
+   text-time="2008-03-27T12:38:45.000000Z"
+   committed-date="2008-03-17T20:42:13.362750Z"
+   checksum="949765560ec55af456d4ccaf941330f9"
+   kind="file"
+   prop-time="2008-03-27T12:38:45.000000Z"/>
+<entry
+   committed-rev="234"
+   name="routes.rb"
+   text-time="2008-03-27T12:38:45.000000Z"
+   committed-date="2008-03-17T20:42:13.362750Z"
+   checksum="66e31bf9b7ebb41e303080d83b4ce56d"
+   kind="file"
+   prop-time="2008-03-27T12:38:45.000000Z"/>
+<entry
+   committed-rev="234"
+   name="database.yml"
+   text-time="2008-03-27T12:38:45.000000Z"
+   committed-date="2008-03-17T20:42:13.362750Z"
+   checksum="87fa948ae6439da1bac804fe0f9328f1"
+   kind="file"
+   prop-time="2008-03-27T12:38:45.000000Z"/>
+<entry
+   committed-rev="234"
+   name="boot.rb"
+   text-time="2008-03-27T12:38:45.000000Z"
+   committed-date="2008-03-17T20:42:13.362750Z"
+   checksum="828a5df491ed79e2df46d2051d0db224"
+   kind="file"
+   prop-time="2008-03-27T12:38:45.000000Z"/>
+<entry
+   committed-rev="234"
+   name="environment.rb"
+   text-time="2008-03-27T12:38:45.000000Z"
+   committed-date="2008-03-17T20:42:13.362750Z"
+   checksum="b104036352ca98ef4c06203fefb66a90"
+   kind="file"
+   prop-time="2008-03-27T12:38:45.000000Z"/>
+<entry
+   name="environments"
+   kind="dir"/>
+<entry
+   committed-rev="234"
+   name="deploy.rb"
+   text-time="2008-03-27T12:38:45.000000Z"
+   committed-date="2008-03-17T20:42:13.362750Z"
+   checksum="9610c940b055de9cbacbf415a3430c8a"
+   kind="file"
+   prop-time="2008-03-27T12:38:45.000000Z"/>
+</wc-entries>

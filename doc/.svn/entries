@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="234"
+   name=""
+   committed-date="2008-03-17T20:42:13.362750Z"
+   url="http://www.blueshiftdesign.co.uk:81/svn-repos/this_is_uk/trunk/doc"
+   kind="dir"
+   uuid="cf3b00ba-abda-3a43-a663-eef1b33534eb"
+   repos="http://www.blueshiftdesign.co.uk:81/svn-repos"
+   revision="274"/>
+<entry
+   committed-rev="234"
+   name="README_FOR_APP"
+   text-time="2008-03-27T12:38:45.000000Z"
+   committed-date="2008-03-17T20:42:13.362750Z"
+   checksum="b4c29cfcb0758d15bdf7afbd2a5c280a"
+   kind="file"
+   prop-time="2008-03-27T12:38:45.000000Z"/>
+<entry
+   committed-rev="234"
+   name="Thisis domain names list.txt"
+   text-time="2008-03-27T12:38:45.000000Z"
+   committed-date="2008-03-17T20:42:13.362750Z"
+   checksum="26bcdaf9635dda17b237b7cd71bdefde"
+   kind="file"
+   prop-time="2008-03-27T12:38:45.000000Z"/>
+</wc-entries>

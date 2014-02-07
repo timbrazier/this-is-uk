@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="270"
+   name=""
+   committed-date="2008-03-20T17:36:05.769000Z"
+   url="http://www.blueshiftdesign.co.uk:81/svn-repos/this_is_uk/trunk/app/views/layouts"
+   kind="dir"
+   uuid="cf3b00ba-abda-3a43-a663-eef1b33534eb"
+   repos="http://www.blueshiftdesign.co.uk:81/svn-repos"
+   revision="274"/>
+<entry
+   committed-rev="270"
+   name="guide.rhtml"
+   text-time="2008-03-27T12:38:44.000000Z"
+   committed-date="2008-03-20T17:36:05.769000Z"
+   checksum="a9a703a524fc381e1a0424657d439d1a"
+   kind="file"
+   prop-time="2008-03-27T12:38:44.000000Z"/>
+<entry
+   committed-rev="234"
+   name="items.rhtml"
+   text-time="2008-03-27T12:38:44.000000Z"
+   committed-date="2008-03-17T20:42:13.362750Z"
+   checksum="c43745ad12b7a4fcd5bdea5a2beb1ae5"
+   kind="file"
+   prop-time="2008-03-27T12:38:44.000000Z"/>
+<entry
+   committed-rev="234"
+   name="users.rhtml"
+   text-time="2008-03-27T12:38:44.000000Z"
+   committed-date="2008-03-17T20:42:13.362750Z"
+   checksum="ccaba253ab451f5bee76273a1603b49a"
+   kind="file"
+   prop-time="2008-03-27T12:38:44.000000Z"/>
+<entry
+   committed-rev="234"
+   name="detail.rhtml"
+   text-time="2008-03-27T12:38:44.000000Z"
+   committed-date="2008-03-17T20:42:13.362750Z"
+   checksum="bc60a4672b16d1dfbb9dc9fdb0b969c3"
+   kind="file"
+   prop-time="2008-03-27T12:38:44.000000Z"/>
+<entry
+   committed-rev="234"
+   name="reviews.rhtml"
+   text-time="2008-03-27T12:38:44.000000Z"
+   committed-date="2008-03-17T20:42:13.362750Z"
+   checksum="92bf6ca2033ab211146304fa29718a5d"
+   kind="file"
+   prop-time="2008-03-27T12:38:44.000000Z"/>
+<entry
+   committed-rev="234"
+   name="admin.rhtml"
+   text-time="2008-03-27T12:38:44.000000Z"
+   committed-date="2008-03-17T20:42:13.362750Z"
+   checksum="81f938c11f67c5e06cdaab8c19e4f1fb"
+   kind="file"
+   prop-time="2008-03-27T12:38:44.000000Z"/>
+</wc-entries>

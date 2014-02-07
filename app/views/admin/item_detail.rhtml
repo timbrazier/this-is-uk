@@ -1,0 +1,78 @@
+<div class="box wide">
+	<h2>
+		<%=@item.item_name%>
+		(Added <strong class="alert"><%=time_ago_in_words(@item.created_at)%></strong> ago)
+	</h2>
+	
+	<%form_for :item do |i|%>
+	<div style="float:left;">
+		<label for="item_item_name">Name</label><br />
+		<%=i.text_field :item_name%><br /><br />
+		<label for="item_item_address">Address</label><br />
+		<%=i.text_field :item_address%><br /><br />
+		<label for="item_item_area">Area</label><br />
+		<%=i.text_field :item_area%><br /><br />
+		<label for="item_item_pocode">Post code</label><br />
+		<%=i.text_field :item_pocode%><br /><br />
+		<label for="item_item_tel">Telephone</label><br />
+		<%=i.text_field :item_tel%><br /><br />
+		<label for="item_item_url">URL</label><br />
+		<%=i.text_field :item_url%>
+	</div>
+	<div style="float:left;width:20px;">&nbsp;</div>
+	<div style="float:left;">
+		<label for="item_category_id">Category</label><br />
+		<%= collection_select(:item, :category_id, @categories, :id, :cat_name) %><br/><br />
+		<label for="item_subcategory_id">Subcategory</label><br />
+		<%= collection_select(:item, :subcategory_id, @subcategories, :id, :subcat_name) %><br/><br />
+		<label for="item_subsubcategory_id">Subsubcategory</label><br />
+		<%= collection_select(:item, :subsubcategory_id, @subsubcategories, :id, :subsubcat_name) %><br/><br />
+		<br /><br /><br />
+		<label for="item_approved">Approved</label>
+		<%=i.check_box :approved%><br /><br />
+		<button type="submit" style="width:150px;">Update item</button><br />
+		<button type="button" style="width:150px;" onclick="window.location='/admin/delete_item?id=<%=@item.id%>'">Delete item</button><br />
+		<button type="button" style="width:150px;" onclick="window.location='/admin/index'">Back / cancel</button>
+	</div>
+	<%end%>
+
+</div>
+
+
+<div class="box narrow">
+	<h3>Recent reviews of Item</h3>
+	<table border="0" cellpadding="0" cellspacing="0">
+		<col style="width:20%;" />
+		<col style="width:40%;" />
+		<col style="width:20%;" />
+		<col style="width:20%;" />
+		<tbody>
+		    <%for review in @recent_reviews_of_item%>
+			<tr>
+				<td><%=time_ago_in_words(review.created_at)%></td>
+				<td><%=link_to(review.user.full_name,:action=>"user_detail",:id=>review.user_id)%></td>
+				<td><%review.rev_rating.to_i.times do%><img src="/images/st1.gif" width="13" height="13" alt="Rated <%=review.rev_rating.to_i%> stars for quality" /><%end%><%(5 - review.rev_rating.to_i).times do%><img src="/images/st0.gif" /><%end%></td>
+				<td><%review.rev_value.to_i.times do%><img src="/images/dlr1.gif" width="13" height="13" alt="Rated <%=review.rev_value.to_i%> for value" /><%end%><%(5 - review.rev_value.to_i).times do%><img src="/images/dlr0.gif" /><%end%></td>
+			</tr>
+            <%end%>
+		</tbody>
+	</table>
+	
+	<h3>Average ratings for item</h3>
+	<table border="0" cellpadding="0" cellspacing="0">
+		<col style="width:60%;" />
+		<col style="width:20%;" />
+		<col style="width:20%;" />
+		<tbody>
+			<tr>
+				<th>&nbsp;</th>
+				<td>
+				<%@item_average_rating.times do%><img src="/images/st1.gif" width="13" height="13" alt="Rated <%=@item_average_rating.to_s%> stars for quality" /><%end%><%(5 - @item_average_rating).times do%><img src="/images/st0.gif" /><%end%>
+				</td>
+				<td>
+				<%@item_average_value.times do%><img src="/images/dlr1.gif" width="13" height="13" alt="Rated <%=@item_average_value.to_s%> for value" /><%end%><%(5 - @item_average_value).times do%><img src="/images/dlr0.gif" /><%end%></td>
+			</tr>
+		</tbody>
+	</table>
+	
+</div>

@@ -1,0 +1,112 @@
+<div class="box wide">
+	<h2>
+		<%=link_to(@this_user.full_name,:action=>"user_detail",:id=>@this_user)%></a> (Member <strong><%=time_ago_in_words(@this_user.created_at)%></strong>, <strong><%=pluralize(@all_reviews_by_user.nitems,"review")%></strong>, Rating <strong class="alert"><%=@user_average%></strong>)
+	</h2>
+	<h2>
+		<%=@this_item.item_name%>
+		(Added <strong class="alert"><%=time_ago_in_words(@this_item.created_at)%></strong> ago)
+	</h2>
+	
+		<h3>Review</h3>
+<textarea style="width:100%; height:18em;"><%=@this_review.review%></textarea>
+
+	<!--div style="float:left;">
+		<h3>Picture</h3>
+		<img id="review-pic" src="item_photos/5.jpg" alt="" width="116" height="101" border="0" />
+		<input type="radio" id="picture-rating-good" name="picture-rating" value="good" />
+		<label for="picture-rating-good">Good</label>
+		<br />
+		<input type="radio" id="picture-rating-ok" name="picture-rating" value="ok" />
+		<label for="picture-rating-ok">OK</label>
+		<br /> 
+		<input type="radio" id="picture-rating-delete" name="picture-rating" value="delete" />
+		<label for="picture-rating-delete">Delete</label>
+	</div-->
+	
+
+	<div style="float:right;">
+		<h3>Options</h3>
+		<%=button_to("Good review",{:action=>"update_review_status",:id=>@this_review,:status=>"2"},:title=>"Review is good enough to feature as headline review",:style=>"width:10em")%>
+		<%=button_to("Accept review",{:action=>"update_review_status",:id=>@this_review,:status=>"1"},:style=>"width:10em")%>
+		<%if @next_review%>
+		<%=button_to("Skip review",{:action=>"skip_review",:next=>@next_review.id},:title=>"Get a new review",:style=>"width:10em")%>
+		<%else%>
+		<%=button_to("Skip review",{:action=>"index"},:title=>"Get a new review",:style=>"width:10em")%>
+		<%end%>
+		<%=button_to("Delete review",{:action=>"delete_review",:id=>@this_review},:title=>"Inappropriate or unsuitable review",:style=>"width:10em",:confirm=>"Are you sure? There is no undo!")%>
+		<%=button_to("Block user",{:action=>"block_user",:id=>@this_review.user_id},:title=>"Excludes the user from the system",:style=>"width:10em")%>
+	</div>
+	<div class="clear-all">&nbsp;</div>
+</div>
+
+
+<div class="box narrow">
+	<h3>Recent reviews of Item</h3>
+	<table border="0" cellpadding="0" cellspacing="0">
+		<col style="width:20%;" />
+		<col style="width:40%;" />
+		<col style="width:20%;" />
+		<col style="width:20%;" />
+		<tbody>
+		    <%for review in @recent_reviews_of_item%>
+			<tr>
+				<td><%=time_ago_in_words(review.created_at)%></td>
+				<td><%=link_to(review.user.full_name,:action=>"user_detail",:id=>review.user_id)%></td>
+				<td><%review.rev_rating.to_i.times do%><img src="/images/st1.gif" width="13" height="13" alt="Rated <%=review.rev_rating.to_i%> stars for quality" /><%end%><%(5 - review.rev_rating.to_i).times do%><img src="/images/st0.gif" /><%end%></td>
+				<td><%review.rev_value.to_i.times do%><img src="/images/dlr1.gif" width="13" height="13" alt="Rated <%=review.rev_value.to_i%> for value" /><%end%><%(5 - review.rev_value.to_i).times do%><img src="/images/dlr0.gif" /><%end%></td>
+			</tr>
+            <%end%>
+		</tbody>
+	</table>
+	
+	<h3>Average ratings for item</h3>
+	<table border="0" cellpadding="0" cellspacing="0">
+		<col style="width:60%;" />
+		<col style="width:20%;" />
+		<col style="width:20%;" />
+		<tbody>
+			<tr>
+				<th>&nbsp;</th>
+				<td>
+				<%@item_average_rating.times do%><img src="/images/st1.gif" width="13" height="13" alt="Rated <%=@item_average_rating.to_s%> stars for quality" /><%end%><%(5 - @item_average_rating).times do%><img src="/images/st0.gif" /><%end%>
+				</td>
+				<td>
+				<%@item_average_value.times do%><img src="/images/dlr1.gif" width="13" height="13" alt="Rated <%=@item_average_value.to_s%> for value" /><%end%><%(5 - @item_average_value).times do%><img src="/images/dlr0.gif" /><%end%></td>
+			</tr>
+		</tbody>
+	</table>
+	
+	<h3>This rating</h3>
+	<table border="0" cellpadding="0" cellspacing="0">
+		<col style="width:60%;" />
+		<col style="width:20%;" />
+		<col style="width:20%;" />
+		<tbody>
+			<tr>
+				<th class="alert"><%=@item_alert%></th>
+				<td><%@this_review.rev_rating.to_i.times do%><img src="/images/st1.gif" width="13" height="13" alt="Rated <%=@this_review.rev_rating.to_i%> stars for quality" /><%end%><%(5 - @this_review.rev_rating.to_i).times do%><img src="/images/st0.gif" /><%end%></td>
+				<td><%@this_review.rev_value.to_i.times do%><img src="/images/dlr1.gif" width="13" height="13" alt="Rated <%=@this_review.rev_value.to_i%> for value" /><%end%><%(5 - @this_review.rev_value.to_i).times do%><img src="/images/dlr0.gif" /><%end%></td>
+			</tr>
+		</tbody>
+	</table>
+	
+	<h3>Recent reviews by user</h3>
+	<table border="0" cellpadding="0" cellspacing="0">
+		<col style="width:20%;" />
+		<col style="width:20%;" />
+		<col style="width:20%;" />
+		<col style="width:20%;" />
+		<col style="width:20%;" />
+		<tbody>
+		    <%for review in @recent_reviews_by_user%>
+			<tr>
+				<td>Sheffield</td>
+				<td><%=review.item.subcategory.subcat_name + ", " + review.item.subsubcategory.subsubcat_name%></td>
+				<td><%=link_to(review.item.item_name,:action=>"review_detail",:id=>review)%></td>
+				<td><%review.rev_rating.to_i.times do%><img src="/images/st1.gif" width="13" height="13" alt="Rated <%=review.rev_rating.to_i%> stars for quality" /><%end%><%(5 - review.rev_rating.to_i).times do%><img src="/images/st0.gif" /><%end%></td>
+				<td><%review.rev_value.to_i.times do%><img src="/images/dlr1.gif" width="13" height="13" alt="Rated <%=review.rev_value.to_i%> for value" /><%end%><%(5 - review.rev_value.to_i).times do%><img src="/images/dlr0.gif" /><%end%></td>
+			</tr>
+			<%end%>
+		</tbody>
+	</table>
+</div>

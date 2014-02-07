@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="270"
+   name=""
+   committed-date="2008-03-20T17:36:05.769000Z"
+   url="http://www.blueshiftdesign.co.uk:81/svn-repos/this_is_uk/trunk/app/views"
+   kind="dir"
+   uuid="cf3b00ba-abda-3a43-a663-eef1b33534eb"
+   repos="http://www.blueshiftdesign.co.uk:81/svn-repos"
+   revision="274"/>
+<entry
+   name="layouts"
+   kind="dir"/>
+<entry
+   name="items"
+   kind="dir"/>
+<entry
+   name="users"
+   kind="dir"/>
+<entry
+   name="contact_mailer"
+   kind="dir"/>
+<entry
+   name="reviews"
+   kind="dir"/>
+<entry
+   name="admin"
+   kind="dir"/>
+<entry
+   name="guide"
+   kind="dir"/>
+</wc-entries>

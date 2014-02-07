@@ -1,0 +1,71 @@
+<table border="0" cellpadding="0" cellspacing="0" id="structure">
+	<tbody>
+    <%= render(:partial => "banner") %>
+		<tr id="nav">
+		<td class="left">&nbsp;</td>
+		<td class="main">
+			<ul id="nav_list">
+				<li id="nav_restaurants" class="on_state"><a href="#">Add Review</a></li>
+			</ul>
+		</td>
+		<td class="right">&nbsp;</td>
+	</tr>
+	<tr id="content">
+		<td class="left">&nbsp;</td>
+		<td class="main">
+			<div id="subnav_column">
+				<div class="drop_shadow">
+					<div class="side_box">
+						<h2>Add your review</h2>
+						<ul id="type_list">
+							<li><a href="#"> Step 1</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div id="main_column">
+				<div class="item">
+					<!--div class="item_pic"><div class="item_pic_border"><img src="item_photos/<?php echo $imagefile;?>" width="103" height="81" alt="" /></div></div-->
+					<h2><%=link_to(@item.item_name, :action => "detail", :cat_sys_name => params[:cat_sys_name], :subcat_sys_name => params[:subcat_sys_name], :id => @item.id)%></h2>
+				</div>
+			</hr />
+				<div class="item" style="margin-top:60px;">
+					<form action="" method="POST">
+                    <%= error_messages_for(:review) %>
+					<p>Your Review of <%=@item.item_name%>¬<br /><%= text_area 'review', 'review', "cols" => 30, "rows" => 8 %></p>
+					<p>Value for money</p>
+					<%=select(:review, :rev_value, [['1 Star (poor)', 1],
+					                               ['2 Stars (adequate)',2],
+					                               ['3 Stars (reasonable)',3],
+					                               ['4 Stars (good)', 4],
+					                               ['5 Stars (excellent)', 5]],:selected => 3)%>
+					<p>Overall Quality</p>
+					<%=select(:review, :rev_rating, [['1 Star (poor)', 1],
+					                               ['2 Stars (adequate)',2],
+					                               ['3 Stars (reasonable)',3],
+					                               ['4 Stars (good)', 4],
+					                               ['5 Stars (excellent)', 5]],:selected => 3)%>
+					<p>Child Friendliness</p>
+					<%=select(:review, :rev_child, [['1 Star (poor)', 1],
+					                               ['2 Stars (adequate)',2],
+					                               ['3 Stars (reasonable)',3],
+					                               ['4 Stars (good)', 4],
+					                               ['5 Stars (excellent)', 5]],:selected => 3)%>
+					<p><input type="submit" name="submit" value="submit"></p>
+				</div>
+				<hr />				
+			</div>
+			<br style="clear:all;" />
+			<%= render(:partial => "footer") %>
+		</td>
+		<td class="right">&nbsp;</td>
+	</tr>
+	<tr id="foot_cap">
+		<td class="left">&nbsp;</td>
+		<td class="main">
+			<div class="bottom_left_corner">&nbsp;</div><div class="bottom_right_corner">&nbsp;</div>&nbsp; 
+		</td>
+		<td class="right">&nbsp;</td>
+	</tr>
+	</tbody>
+</table>

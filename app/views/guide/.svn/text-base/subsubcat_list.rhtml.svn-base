@@ -1,0 +1,5 @@
+      <select name="item[subsubcategory_id]" id="item_subsubcategory_id">
+      <%for subsubcategory in @subsubcategories%>
+      <option value = "<%=subsubcategory.id%>"><%=subsubcategory.subsubcat_name%></option>
+      <%end%>
+    </select>

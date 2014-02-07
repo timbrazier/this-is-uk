@@ -1,0 +1,30 @@
+                        <br/>
+                        <div class="helpfulness" id="review_<%=@this_review.id.to_s%>">
+                        <div id="widget_<%=@this_review.id.to_s%>">
+                        Helpful review?&nbsp;
+                        <%= link_to_remote(image_tag(url_for("thumbs-up.gif"),:title=>"Rate this review as helpful",:border=>"0", :align=>"absmiddle"),
+				                                                       :url=>{:controller => "guide",
+				                                                       :action => "helpfulness",
+				                                                       :direction => "up",
+				                                                       :cat_sys_name => params[:cat_sys_name],
+				                                                       :subcat_sys_name => params[:subcat_sys_name],
+				                                                       :subsubcat_sys_name => params[:subsubcat_sys_name],
+				                                                       :item => @this_item.id,
+				                                                       :id => @this_review},
+				                                                       :loading => "Element.show('indicator_"+@this_review.id.to_s + "')",
+				                                                       :complete => "Element.remove('widget_"+@this_review.id.to_s + "');new Insertion.Top('review_"+@this_review.id.to_s + "','Thank you.');new Effect.Highlight('review_"+@this_review.id.to_s + "');new Effect.Fade('review_"+@this_review.id.to_s + "')")%>
+                        <%= link_to_remote(image_tag(url_for("thumbs-down.gif"),:title=>"Rate this review as unhelpful",:border=>"0", :align=>"absmiddle"),
+				                                                       :url=>{:controller => "guide",
+				                                                       :action => "helpfulness",
+				                                                       :direction => "down",
+				                                                       :cat_sys_name => params[:cat_sys_name],
+				                                                       :subcat_sys_name => params[:subcat_sys_name],
+				                                                       :subsubcat_sys_name => params[:subsubcat_sys_name],
+				                                                       :item => @this_item.id,
+				                                                       :id => @this_review},
+				                                                       :align => "absmiddle",
+				                                                       :loading => "Element.show('indicator_"+@this_review.id.to_s + "')",
+				                                                       :complete => "Element.remove('widget_"+@this_review.id.to_s + "');new Insertion.Top('review_"+@this_review.id.to_s + "','Thank you.');new Effect.Highlight('review_"+@this_review.id.to_s + "');new Effect.Fade('review_"+@this_review.id.to_s + "')")%>
+				        <%= image_tag("loading_small.gif",:id => 'indicator_'+@this_review.id.to_s,:style => 'display:none;', :align=>"absmiddle")%>
+				        </div>
+				        </div>

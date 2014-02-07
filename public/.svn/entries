@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="269"
+   name=""
+   committed-date="2008-03-20T17:25:33.206500Z"
+   url="http://www.blueshiftdesign.co.uk:81/svn-repos/this_is_uk/trunk/public"
+   kind="dir"
+   uuid="cf3b00ba-abda-3a43-a663-eef1b33534eb"
+   repos="http://www.blueshiftdesign.co.uk:81/svn-repos"
+   revision="274"/>
+<entry
+   committed-rev="234"
+   name="dispatch.cgi"
+   text-time="2008-03-27T12:39:30.000000Z"
+   committed-date="2008-03-17T20:42:13.362750Z"
+   checksum="0c3718273af6c29da37e26fd33e4ec89"
+   kind="file"
+   prop-time="2008-03-27T12:38:45.000000Z"/>
+<entry
+   committed-rev="234"
+   name="dispatch.rb"
+   text-time="2008-03-27T12:39:30.000000Z"
+   committed-date="2008-03-17T20:42:13.362750Z"
+   checksum="0c3718273af6c29da37e26fd33e4ec89"
+   kind="file"
+   prop-time="2008-03-27T12:38:45.000000Z"/>
+<entry
+   name="images"
+   kind="dir"/>
+<entry
+   committed-rev="234"
+   name="dispatch.fcgi"
+   text-time="2008-03-27T12:39:30.000000Z"
+   committed-date="2008-03-17T20:42:13.362750Z"
+   checksum="bff7501d987421a36a6e07f1c7041cb2"
+   kind="file"
+   prop-time="2008-03-27T12:39:29.000000Z"/>
+<entry
+   committed-rev="234"
+   name="robots.txt"
+   text-time="2008-03-27T12:39:30.000000Z"
+   committed-date="2008-03-17T20:42:13.362750Z"
+   checksum="a9d8217ec04c304aba7926ae1f066973"
+   kind="file"
+   prop-time="2008-03-27T12:39:29.000000Z"/>
+<entry
+   committed-rev="234"
+   name="500.html"
+   text-time="2008-03-27T12:39:30.000000Z"
+   committed-date="2008-03-17T20:42:13.362750Z"
+   checksum="6e08d6d1f55c99e94b495679134a9eaf"
+   kind="file"
+   prop-time="2008-03-27T12:39:29.000000Z"/>
+<entry
+   committed-rev="234"
+   name="index.html.old"
+   text-time="2008-03-27T12:39:30.000000Z"
+   committed-date="2008-03-17T20:42:13.362750Z"
+   checksum="f09c82f6afd0bbae971902e3f1afcddf"
+   kind="file"
+   prop-time="2008-03-27T12:39:29.000000Z"/>
+<entry
+   name="javascripts"
+   kind="dir"/>
+<entry
+   name="domains"
+   kind="dir"/>
+<entry
+   committed-rev="234"
+   name="404.html"
+   text-time="2008-03-27T12:39:30.000000Z"
+   committed-date="2008-03-17T20:42:13.362750Z"
+   checksum="1248392955936f5d9142da8f66c5b46b"
+   kind="file"
+   prop-time="2008-03-27T12:39:30.000000Z"/>
+<entry
+   committed-rev="234"
+   name=".htaccess"
+   text-time="2008-03-27T12:39:30.000000Z"
+   committed-date="2008-03-17T20:42:13.362750Z"
+   checksum="eebf5d1e0a663f298d77013224f03e4f"
+   kind="file"
+   prop-time="2008-03-27T12:39:30.000000Z"/>
+<entry
+   name="stylesheets"
+   kind="dir"/>
+<entry
+   committed-rev="234"
+   name="favicon.ico"
+   text-time="2008-03-27T12:39:30.000000Z"
+   committed-date="2008-03-17T20:42:13.362750Z"
+   checksum="d41d8cd98f00b204e9800998ecf8427e"
+   kind="file"
+   prop-time="2008-03-27T12:39:30.000000Z"/>
+</wc-entries>

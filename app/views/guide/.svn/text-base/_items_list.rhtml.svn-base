@@ -1,0 +1,10 @@
+<ul class="items">
+<% for item in @items do -%>
+  <li class="item">
+    <div class="item_name"><%=link_to(item.item_name, :action => "detail", :cat_sys_name => item.cat_sys_name, :subcat_sys_name => item.subcat_sys_name,:subsubcat_sys_name => item.subsubcat_sys_name, :id => item.id)%></div>
+    <div>
+      <span class="informal"><%=item.cat_name%></span>
+    </div>
+  </li>
+<% end -%>
+</ul>

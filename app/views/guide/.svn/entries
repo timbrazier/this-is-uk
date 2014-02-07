@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="250"
+   name=""
+   committed-date="2008-03-18T11:57:12.065875Z"
+   url="http://www.blueshiftdesign.co.uk:81/svn-repos/this_is_uk/trunk/app/views/guide"
+   kind="dir"
+   uuid="cf3b00ba-abda-3a43-a663-eef1b33534eb"
+   repos="http://www.blueshiftdesign.co.uk:81/svn-repos"
+   revision="274"/>
+<entry
+   committed-rev="234"
+   name="default_subsubcat_list.rhtml"
+   text-time="2008-03-27T12:38:44.000000Z"
+   committed-date="2008-03-17T20:42:13.362750Z"
+   checksum="e3914dc03af7d8f5ca09b180a438ccc6"
+   kind="file"
+   prop-time="2008-03-27T12:38:44.000000Z"/>
+<entry
+   committed-rev="234"
+   name="suggest_new.rhtml"
+   text-time="2008-03-27T12:38:44.000000Z"
+   committed-date="2008-03-17T20:42:13.362750Z"
+   checksum="a1036eb0603a078acf90041e4ea3f071"
+   kind="file"
+   prop-time="2008-03-27T12:38:44.000000Z"/>
+<entry
+   committed-rev="234"
+   name="fix_all_missing_subcats.rhtml"
+   text-time="2008-03-27T12:38:44.000000Z"
+   committed-date="2008-03-17T20:42:13.362750Z"
+   checksum="f6acfce9a522fdeb4607a3656652b55c"
+   kind="file"
+   prop-time="2008-03-27T12:38:44.000000Z"/>
+<entry
+   committed-rev="234"
+   name="_review_rater_widget.rhtml"
+   text-time="2008-03-27T12:38:44.000000Z"
+   committed-date="2008-03-17T20:42:13.362750Z"
+   checksum="38edad04aad68b5e1486f82e953ebe85"
+   kind="file"
+   prop-time="2008-03-27T12:38:44.000000Z"/>
+<entry
+   committed-rev="234"
+   name="detail.rhtml"
+   text-time="2008-03-27T12:38:44.000000Z"
+   committed-date="2008-03-17T20:42:13.362750Z"
+   checksum="856cec5b0c9432b26d6a695b671f65a3"
+   kind="file"
+   prop-time="2008-03-27T12:38:44.000000Z"/>
+<entry
+   committed-rev="234"
+   name="add_subsubcat.rhtml"
+   text-time="2008-03-27T12:38:44.000000Z"
+   committed-date="2008-03-17T20:42:13.362750Z"
+   checksum="1400c9ffd9cef8883cc328134415db05"
+   kind="file"
+   prop-time="2008-03-27T12:38:44.000000Z"/>
+<entry
+   committed-rev="234"
+   name="add_business.rhtml"
+   text-time="2008-03-27T12:38:44.000000Z"
+   committed-date="2008-03-17T20:42:13.362750Z"
+   checksum="f2bae5cbdb8e9a28b3c10b98a305b25e"
+   kind="file"
+   prop-time="2008-03-27T12:38:44.000000Z"/>
+<entry
+   committed-rev="234"
+   name="add_item.rhtml"
+   text-time="2008-03-27T12:38:44.000000Z"
+   committed-date="2008-03-17T20:42:13.362750Z"
+   checksum="873bded2f97433a545bd9045d24b20fb"
+   kind="file"
+   prop-time="2008-03-27T12:38:44.000000Z"/>
+<entry
+   committed-rev="234"
+   name="add_review.rhtml"
+   text-time="2008-03-27T12:38:44.000000Z"
+   committed-date="2008-03-17T20:42:13.362750Z"
+   checksum="b75266751c2ad62e0afd27a1a501a810"
+   kind="file"
+   prop-time="2008-03-27T12:38:44.000000Z"/>
+<entry
+   committed-rev="234"
+   name="_items_list.rhtml"
+   text-time="2008-03-27T12:38:44.000000Z"
+   committed-date="2008-03-17T20:42:13.362750Z"
+   checksum="c5f61db41524fe9e3e1967515bafaf59"
+   kind="file"
+   prop-time="2008-03-27T12:38:44.000000Z"/>
+<entry
+   committed-rev="234"
+   name="_search_box.rhtml"
+   text-time="2008-03-27T12:38:44.000000Z"
+   committed-date="2008-03-17T20:42:13.362750Z"
+   checksum="609cddca73aa883aecb5cc29ee8b1a53"
+   kind="file"
+   prop-time="2008-03-27T12:38:44.000000Z"/>
+<entry
+   committed-rev="234"
+   name="_add_list.rhtml"
+   text-time="2008-03-27T12:38:44.000000Z"
+   committed-date="2008-03-17T20:42:13.362750Z"
+   checksum="67bedafa25ebcd5b58ad517215c5e4bf"
+   kind="file"
+   prop-time="2008-03-27T12:38:44.000000Z"/>
+<entry
+   committed-rev="234"
+   name="subsubcat_list.rhtml"
+   text-time="2008-03-27T12:38:44.000000Z"
+   committed-date="2008-03-17T20:42:13.362750Z"
+   checksum="e3914dc03af7d8f5ca09b180a438ccc6"
+   kind="file"
+   prop-time="2008-03-27T12:38:44.000000Z"/>
+<entry
+   committed-rev="234"
+   name="add_subcat.rhtml"
+   text-time="2008-03-27T12:38:44.000000Z"
+   committed-date="2008-03-17T20:42:13.362750Z"
+   checksum="484d5e9147cd67a579f879d92843a7b3"
+   kind="file"
+   prop-time="2008-03-27T12:38:44.000000Z"/>
+<entry
+   committed-rev="234"
+   name="_cat_menu.rhtml"
+   text-time="2008-03-27T12:38:44.000000Z"
+   committed-date="2008-03-17T20:42:13.362750Z"
+   checksum="4ab681556b5d5d360a7ef01d34e5c830"
+   kind="file"
+   prop-time="2008-03-27T12:38:44.000000Z"/>
+<entry
+   committed-rev="234"
+   name="_area_menu.rhtml"
+   text-time="2008-03-27T12:38:44.000000Z"
+   committed-date="2008-03-17T20:42:13.362750Z"
+   checksum="c0c5973a2df4f3da82fe1ffdab2f70e0"
+   kind="file"
+   prop-time="2008-03-27T12:38:44.000000Z"/>
+<entry
+   committed-rev="234"
+   name="contact.rhtml"
+   text-time="2008-03-27T12:38:44.000000Z"
+   committed-date="2008-03-17T20:42:13.362750Z"
+   checksum="f6e4af19dfb814a709c4bc2624fcd583"
+   kind="file"
+   prop-time="2008-03-27T12:38:44.000000Z"/>
+<entry
+   committed-rev="234"
+   name="_footer.rhtml"
+   text-time="2008-03-27T12:38:44.000000Z"
+   committed-date="2008-03-17T20:42:13.362750Z"
+   checksum="29a822d4c75826b3c782b261d1908504"
+   kind="file"
+   prop-time="2008-03-27T12:38:44.000000Z"/>
+<entry
+   committed-rev="234"
+   name=".tmp_detail.rhtml"
+   text-time="2008-03-27T12:38:44.000000Z"
+   committed-date="2008-03-17T20:42:13.362750Z"
+   checksum="975d0b97ff7052a35e2174869dca799f"
+   kind="file"
+   prop-time="2008-03-27T12:38:44.000000Z"/>
+<entry
+   committed-rev="234"
+   name="_type_menu.rhtml"
+   text-time="2008-03-27T12:38:44.000000Z"
+   committed-date="2008-03-17T20:42:13.362750Z"
+   checksum="0155b25918a1c27978260f13183a0c80"
+   kind="file"
+   prop-time="2008-03-27T12:38:44.000000Z"/>
+<entry
+   committed-rev="234"
+   name="_banner.rhtml"
+   text-time="2008-03-27T12:38:44.000000Z"
+   committed-date="2008-03-17T20:42:13.362750Z"
+   checksum="36a10446020a8315b47ca2ee95a252d0"
+   kind="file"
+   prop-time="2008-03-27T12:38:44.000000Z"/>
+<entry
+   committed-rev="250"
+   name="index.rhtml"
+   text-time="2008-03-27T12:38:44.000000Z"
+   committed-date="2008-03-18T11:57:12.065875Z"
+   checksum="4f44f272afb28ef35bbc778fe45e5c39"
+   kind="file"
+   prop-time="2008-03-27T12:38:44.000000Z"/>
+<entry
+   committed-rev="234"
+   name="both_lists.rhtml"
+   text-time="2008-03-27T12:38:44.000000Z"
+   committed-date="2008-03-17T20:42:13.362750Z"
+   checksum="7ecb1eaded9a6a8517d6e091a2068eb2"
+   kind="file"
+   prop-time="2008-03-27T12:38:44.000000Z"/>
+<entry
+   committed-rev="234"
+   name="one_list.rhtml"
+   text-time="2008-03-27T12:38:44.000000Z"
+   committed-date="2008-03-17T20:42:13.362750Z"
+   checksum="e3914dc03af7d8f5ca09b180a438ccc6"
+   kind="file"
+   prop-time="2008-03-27T12:38:44.000000Z"/>
+<entry
+   committed-rev="234"
+   name="save_item.rhtml"
+   text-time="2008-03-27T12:38:44.000000Z"
+   committed-date="2008-03-17T20:42:13.362750Z"
+   checksum="d41d8cd98f00b204e9800998ecf8427e"
+   kind="file"
+   prop-time="2008-03-27T12:38:44.000000Z"/>
+<entry
+   committed-rev="234"
+   name="subcat_list.rhtml"
+   text-time="2008-03-27T12:38:44.000000Z"
+   committed-date="2008-03-17T20:42:13.362750Z"
+   checksum="a6a58af1d66f3752c58f4e5ac281fbe6"
+   kind="file"
+   prop-time="2008-03-27T12:38:44.000000Z"/>
+<entry
+   committed-rev="234"
+   name="_subtype_menu.rhtml"
+   text-time="2008-03-27T12:38:44.000000Z"
+   committed-date="2008-03-17T20:42:13.362750Z"
+   checksum="7773adebcaa63b48dddc5808f02cad3c"
+   kind="file"
+   prop-time="2008-03-27T12:38:44.000000Z"/>
+<entry
+   committed-rev="234"
+   name="add_city.rhtml"
+   text-time="2008-03-27T12:38:44.000000Z"
+   committed-date="2008-03-17T20:42:13.362750Z"
+   checksum="6d451137bf293efba932e14ef145958a"
+   kind="file"
+   prop-time="2008-03-27T12:38:44.000000Z"/>
+<entry
+   committed-rev="234"
+   name="add_area.rhtml"
+   text-time="2008-03-27T12:38:44.000000Z"
+   committed-date="2008-03-17T20:42:13.362750Z"
+   checksum="33dd8556a45cbc983c74b3580cbce896"
+   kind="file"
+   prop-time="2008-03-27T12:38:44.000000Z"/>
+<entry
+   committed-rev="234"
+   name="_item_search.rhtml"
+   text-time="2008-03-27T12:38:44.000000Z"
+   committed-date="2008-03-17T20:42:13.362750Z"
+   checksum="792ad0b76ec1bf3758ab709fae9ac36d"
+   kind="file"
+   prop-time="2008-03-27T12:38:44.000000Z"/>
+<entry
+   committed-rev="234"
+   name="categories.rhtml"
+   text-time="2008-03-27T12:38:44.000000Z"
+   committed-date="2008-03-17T20:42:13.362750Z"
+   checksum="6692aeab34e1e4b302d9d86dec95581c"
+   kind="file"
+   prop-time="2008-03-27T12:38:44.000000Z"/>
+<entry
+   committed-rev="234"
+   name="helpfulness.rhtml"
+   text-time="2008-03-27T12:38:44.000000Z"
+   committed-date="2008-03-17T20:42:13.362750Z"
+   checksum="27e9ae7328e63fda1cd0a64c89da5424"
+   kind="file"
+   prop-time="2008-03-27T12:38:44.000000Z"/>
+<entry
+   committed-rev="234"
+   name="_suggest_new.rhtml"
+   text-time="2008-03-27T12:38:44.000000Z"
+   committed-date="2008-03-17T20:42:13.362750Z"
+   checksum="c0b5c971522c9911748056a06c36fa4c"
+   kind="file"
+   prop-time="2008-03-27T12:38:44.000000Z"/>
+</wc-entries>

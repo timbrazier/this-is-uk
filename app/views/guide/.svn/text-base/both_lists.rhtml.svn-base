@@ -1,0 +1,31 @@
+                        <table>
+                            <tr>
+                                <td align="right" valign="top" width="125">Subcategory</td>
+                                <td width="20">&nbsp;</td>
+                                <td align="left" valign="top">
+                                  <div id="subcats" align="left">
+                                    <select name="item[subcategory_id]" id="item_subcategory_id">
+                                        <%for subcategory in @subcategories%>
+                                        <option value = "<%=subcategory.id%>" <%if subcategory.id.to_s==@selected_subcat%>selected<%end%>><%=subcategory.subcat_name%></option>
+                                        <%end%>
+                                    </select>
+                                    <%= image_tag("loading_small.gif",
+                                                      :id => 'indicator3',
+                                                      :style => 'display:none')%>
+                                  </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="right" valign="top">Subsubcategory</td>
+                                <td>&nbsp;</td>
+                                <td align="left" valign="top">
+                                    <div id="subsubcats">
+                                        <select name="item[subsubcategory_id]" id="item_subsubcategory_id">
+                                            <%for subsubcategory in @subsubcategories%>
+                                                <option value="<%=subsubcategory.id%>" <%if subsubcategory.id.to_s==@selected_subsubcat%>selected<%end%>><%=subsubcategory.subsubcat_name%></option>
+                                            <%  end%>
+                                        </select>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="234"
+   name=""
+   committed-date="2008-03-17T20:42:13.362750Z"
+   url="http://www.blueshiftdesign.co.uk:81/svn-repos/this_is_uk/trunk/spec"
+   kind="dir"
+   uuid="cf3b00ba-abda-3a43-a663-eef1b33534eb"
+   repos="http://www.blueshiftdesign.co.uk:81/svn-repos"
+   revision="274"/>
+<entry
+   committed-rev="234"
+   name="test2spec.erb"
+   text-time="2008-03-27T12:38:45.000000Z"
+   committed-date="2008-03-17T20:42:13.362750Z"
+   checksum="2f8b8cead07e99049995566e1ca3b6e0"
+   kind="file"
+   prop-time="2008-03-27T12:38:45.000000Z"/>
+<entry
+   name="controllers"
+   kind="dir"/>
+<entry
+   committed-rev="234"
+   name="spec_helper.rb"
+   text-time="2008-03-27T12:38:45.000000Z"
+   committed-date="2008-03-17T20:42:13.362750Z"
+   checksum="acb9612de3e3ebe61c966f1cace8f44d"
+   kind="file"
+   prop-time="2008-03-27T12:38:45.000000Z"/>
+</wc-entries>

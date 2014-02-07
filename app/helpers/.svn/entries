@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="249"
+   name=""
+   committed-date="2008-03-18T11:57:01.784625Z"
+   url="http://www.blueshiftdesign.co.uk:81/svn-repos/this_is_uk/trunk/app/helpers"
+   kind="dir"
+   uuid="cf3b00ba-abda-3a43-a663-eef1b33534eb"
+   repos="http://www.blueshiftdesign.co.uk:81/svn-repos"
+   revision="274"/>
+<entry
+   committed-rev="234"
+   name="items_helper.rb"
+   text-time="2008-03-27T12:38:44.000000Z"
+   committed-date="2008-03-17T20:42:13.362750Z"
+   checksum="001172aa4797c196ec9082fce48a7cee"
+   kind="file"
+   prop-time="2008-03-27T12:38:44.000000Z"/>
+<entry
+   committed-rev="234"
+   name="users_helper.rb"
+   text-time="2008-03-27T12:38:44.000000Z"
+   committed-date="2008-03-17T20:42:13.362750Z"
+   checksum="9e83a0b117a3e96aa9f00ace008d13a3"
+   kind="file"
+   prop-time="2008-03-27T12:38:44.000000Z"/>
+<entry
+   committed-rev="249"
+   name="application_helper.rb"
+   text-time="2008-03-27T12:38:44.000000Z"
+   committed-date="2008-03-18T11:57:01.784625Z"
+   checksum="cdfdaa59b9a0a90e5d9042b23e04cae1"
+   kind="file"
+   prop-time="2008-03-27T12:38:44.000000Z"/>
+<entry
+   committed-rev="234"
+   name="reviews_helper.rb"
+   text-time="2008-03-27T12:38:44.000000Z"
+   committed-date="2008-03-17T20:42:13.362750Z"
+   checksum="02589a97e41036deb71c627959f6b152"
+   kind="file"
+   prop-time="2008-03-27T12:38:44.000000Z"/>
+<entry
+   committed-rev="234"
+   name="admin_helper.rb"
+   text-time="2008-03-27T12:38:44.000000Z"
+   committed-date="2008-03-17T20:42:13.362750Z"
+   checksum="ec0e277880d612167624789726833b80"
+   kind="file"
+   prop-time="2008-03-27T12:38:44.000000Z"/>
+<entry
+   committed-rev="234"
+   name="guide_helper.rb"
+   text-time="2008-03-27T12:38:44.000000Z"
+   committed-date="2008-03-17T20:42:13.362750Z"
+   checksum="480d5f5b4cbee286f04e0b8f4bdb4147"
+   kind="file"
+   prop-time="2008-03-27T12:38:44.000000Z"/>
+</wc-entries>

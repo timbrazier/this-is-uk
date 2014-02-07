@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="234"
+   name=""
+   committed-date="2008-03-17T20:42:13.362750Z"
+   url="http://www.blueshiftdesign.co.uk:81/svn-repos/this_is_uk/trunk/app/views/users"
+   kind="dir"
+   uuid="cf3b00ba-abda-3a43-a663-eef1b33534eb"
+   repos="http://www.blueshiftdesign.co.uk:81/svn-repos"
+   revision="274"/>
+<entry
+   committed-rev="234"
+   name="register.rhtml"
+   text-time="2008-03-27T12:38:44.000000Z"
+   committed-date="2008-03-17T20:42:13.362750Z"
+   checksum="bf65f9029098b83dc20890f80f47ec62"
+   kind="file"
+   prop-time="2008-03-27T12:38:44.000000Z"/>
+<entry
+   committed-rev="234"
+   name="login.rhtml"
+   text-time="2008-03-27T12:38:44.000000Z"
+   committed-date="2008-03-17T20:42:13.362750Z"
+   checksum="e426e375be10dbfbd63cfee6abaeef91"
+   kind="file"
+   prop-time="2008-03-27T12:38:44.000000Z"/>
+</wc-entries>

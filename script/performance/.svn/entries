@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="234"
+   name=""
+   committed-date="2008-03-17T20:42:13.362750Z"
+   url="http://www.blueshiftdesign.co.uk:81/svn-repos/this_is_uk/trunk/script/performance"
+   kind="dir"
+   uuid="cf3b00ba-abda-3a43-a663-eef1b33534eb"
+   repos="http://www.blueshiftdesign.co.uk:81/svn-repos"
+   revision="274"/>
+<entry
+   committed-rev="234"
+   name="benchmarker"
+   text-time="2008-03-27T12:38:45.000000Z"
+   committed-date="2008-03-17T20:42:13.362750Z"
+   checksum="91086af38733556c5aabc91eb4b20bed"
+   kind="file"
+   prop-time="2008-03-27T12:38:45.000000Z"/>
+<entry
+   committed-rev="234"
+   name="profiler"
+   text-time="2008-03-27T12:38:45.000000Z"
+   committed-date="2008-03-17T20:42:13.362750Z"
+   checksum="4dd7faa9b0b5f678082e19c97852b005"
+   kind="file"
+   prop-time="2008-03-27T12:38:45.000000Z"/>
+</wc-entries>

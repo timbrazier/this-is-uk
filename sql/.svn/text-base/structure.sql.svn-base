@@ -1,0 +1,287 @@
+/*
+MySQL Data Transfer
+Source Host: localhost
+Source Database: this_is_uk_development
+Target Host: localhost
+Target Database: this_is_uk_development
+Date: 24/09/2006 23:02:20
+*/
+
+SET FOREIGN_KEY_CHECKS=0;
+-- ----------------------------
+-- Table structure for areas
+-- ----------------------------
+DROP TABLE IF EXISTS `areas`;
+CREATE TABLE `areas` (
+  `id` mediumint(6) unsigned zerofill NOT NULL auto_increment,
+  `city_id` mediumint(6) unsigned zerofill NOT NULL default '000000',
+  `area_name` varchar(64) NOT NULL default '',
+  `abb_area_name` varchar(24) NOT NULL default '',
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- ----------------------------
+-- Table structure for categories
+-- ----------------------------
+DROP TABLE IF EXISTS `categories`;
+CREATE TABLE `categories` (
+  `id` mediumint(6) unsigned zerofill NOT NULL auto_increment,
+  `cat_name` varchar(24) NOT NULL default '',
+  `cat_sys_name` varchar(32) NOT NULL default '',
+  `cat_style` varchar(24) NOT NULL default '',
+  `created_at` datetime NOT NULL default '0000-00-00 00:00:00',
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `cat_style` (`cat_style`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- ----------------------------
+-- Table structure for cities
+-- ----------------------------
+DROP TABLE IF EXISTS `cities`;
+CREATE TABLE `cities` (
+  `id` mediumint(6) unsigned zerofill NOT NULL auto_increment,
+  `city_name` varchar(24) NOT NULL default '',
+  `city_longname` varchar(64) NOT NULL default '',
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- ----------------------------
+-- Table structure for images
+-- ----------------------------
+DROP TABLE IF EXISTS `images`;
+CREATE TABLE `images` (
+  `id` int(6) unsigned zerofill NOT NULL auto_increment,
+  `item_id` mediumint(6) NOT NULL default '0',
+  `image_rating` decimal(3,2) unsigned zerofill NOT NULL default '0.00',
+  `image_review` mediumint(6) unsigned zerofill NOT NULL default '000000',
+  `image_fname` varchar(32) NOT NULL default '',
+  `image_desc` varchar(255) NOT NULL default '',
+  `image_uploaded_user` mediumint(6) unsigned zerofill NOT NULL default '000000',
+  `image_modevent` mediumint(6) unsigned zerofill NOT NULL default '000000',
+  `image_status` enum('0','1','2') NOT NULL default '0',
+  UNIQUE KEY `image_id` (`id`),
+  KEY `image_item` (`item_id`),
+  KEY `image_review` (`image_review`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- ----------------------------
+-- Table structure for items
+-- ----------------------------
+DROP TABLE IF EXISTS `items`;
+CREATE TABLE `items` (
+  `id` mediumint(6) unsigned zerofill NOT NULL auto_increment,
+  `item_name` varchar(64) NOT NULL default '',
+  `item_status` enum('0','1','2') NOT NULL default '0',
+  `category_id` mediumint(6) unsigned zerofill NOT NULL default '000000',
+  `subcategory_id` mediumint(6) unsigned zerofill NOT NULL default '000000',
+  `item_cat2` mediumint(6) unsigned zerofill NOT NULL default '000000',
+  `item_subcat_cat2` mediumint(6) unsigned zerofill NOT NULL default '000000',
+  `item_image_index` mediumint(6) unsigned zerofill NOT NULL default '000000',
+  `item_avrating` decimal(3,2) NOT NULL default '0.00',
+  `item_avpricing` decimal(3,2) NOT NULL default '0.00',
+  `item_created_date` int(10) NOT NULL default '0',
+  `item_created_user` mediumint(6) unsigned zerofill NOT NULL default '000000',
+  `item_modified_date` int(10) NOT NULL default '0',
+  `item_modified_user` mediumint(6) unsigned zerofill NOT NULL default '000000',
+  `mod_event` mediumint(6) unsigned zerofill NOT NULL default '000000',
+  `item_url` varchar(64) NOT NULL default '',
+  `item_tel` varchar(24) NOT NULL default '',
+  `item_address` varchar(255) NOT NULL default '',
+  `item_pocode` varchar(12) NOT NULL default '',
+  `item_area` mediumint(6) unsigned zerofill NOT NULL default '000000',
+  `item_city` mediumint(6) unsigned zerofill NOT NULL default '000000',
+  `created_at` datetime NOT NULL default '0000-00-00 00:00:00',
+  PRIMARY KEY  (`id`),
+  KEY `item_cat1` (`category_id`,`item_created_user`,`item_city`),
+  KEY `item_status` (`item_status`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- ----------------------------
+-- Table structure for modevents
+-- ----------------------------
+DROP TABLE IF EXISTS `modevents`;
+CREATE TABLE `modevents` (
+  `mod_event_id` mediumint(6) unsigned zerofill NOT NULL auto_increment,
+  `mod_event_code` smallint(4) NOT NULL default '0',
+  `mod_item_id` mediumint(6) unsigned zerofill NOT NULL default '000000',
+  `mod_review_id` mediumint(6) unsigned zerofill NOT NULL default '000000',
+  `mod_user_id` mediumint(6) unsigned zerofill NOT NULL default '000000',
+  `mod_moddate` int(10) NOT NULL default '0',
+  PRIMARY KEY  (`mod_event_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- ----------------------------
+-- Table structure for reviews
+-- ----------------------------
+DROP TABLE IF EXISTS `reviews`;
+CREATE TABLE `reviews` (
+  `id` mediumint(6) unsigned zerofill NOT NULL auto_increment,
+  `item_id` mediumint(6) unsigned zerofill NOT NULL default '000000',
+  `image_id` mediumint(6) unsigned zerofill NOT NULL default '000000',
+  `rev_title` varchar(36) NOT NULL default '',
+  `rev_desc` text NOT NULL,
+  `rev_comments` mediumtext NOT NULL,
+  `rev_status` enum('0','1','2') NOT NULL default '0',
+  `rev_rating` decimal(3,2) NOT NULL default '0.00',
+  `rev_value` decimal(3,2) NOT NULL default '0.00',
+  `rev_mod_rating` decimal(3,2) NOT NULL default '0.00',
+  `rev_mod_event` mediumint(6) unsigned zerofill NOT NULL default '000000',
+  `rev_created` int(10) NOT NULL default '0',
+  `rev_created_user` mediumint(6) unsigned zerofill NOT NULL default '000000',
+  `rev_modified` int(10) NOT NULL default '0',
+  `rev_modified_user` mediumint(6) unsigned zerofill NOT NULL default '000000',
+  `created_at` datetime NOT NULL default '0000-00-00 00:00:00',
+  PRIMARY KEY  (`id`),
+  KEY `rev_item` (`item_id`,`image_id`,`rev_mod_event`),
+  FULLTEXT KEY `rev_desc` (`rev_desc`,`rev_comments`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- ----------------------------
+-- Table structure for sessions
+-- ----------------------------
+DROP TABLE IF EXISTS `sessions`;
+CREATE TABLE `sessions` (
+  `id` int(10) unsigned NOT NULL auto_increment,
+  `sessid` char(32) NOT NULL default '',
+  `data` text NOT NULL,
+  `created_at` datetime NOT NULL default '0000-00-00 00:00:00',
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- ----------------------------
+-- Table structure for subcategories
+-- ----------------------------
+DROP TABLE IF EXISTS `subcategories`;
+CREATE TABLE `subcategories` (
+  `id` mediumint(6) unsigned zerofill NOT NULL auto_increment,
+  `category_id` mediumint(6) unsigned zerofill NOT NULL default '000000',
+  `subcat_name` varchar(24) NOT NULL default '',
+  `subcat_sys_name` varchar(32) NOT NULL default '',
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- ----------------------------
+-- Table structure for users
+-- ----------------------------
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE `users` (
+  `id` mediumint(6) unsigned zerofill NOT NULL auto_increment,
+  `user_name` varchar(18) NOT NULL default '',
+  `user_pwd` varchar(18) NOT NULL default '',
+  `user_fname` varchar(18) NOT NULL default '',
+  `user_lname` varchar(24) NOT NULL default '',
+  `user_email` varchar(64) NOT NULL default '',
+  `user_rating` decimal(3,2) NOT NULL default '0.00',
+  `user_joindate` int(10) NOT NULL default '0',
+  `user_lastlogin` int(10) NOT NULL default '0',
+  `user_status` enum('user','mod','admin') NOT NULL default 'user',
+  `user_active` enum('0','1','2') NOT NULL default '0',
+  PRIMARY KEY  (`id`),
+  KEY `user_name` (`user_name`,`user_pwd`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- ----------------------------
+-- Records 
+-- ----------------------------
+INSERT INTO `areas` VALUES ('000001', '000001', 'Nether Edge', 'nether_edge');
+INSERT INTO `areas` VALUES ('000002', '000001', 'Fulwood', 'fulwood');
+INSERT INTO `areas` VALUES ('000003', '000001', 'Burngreave', 'burngreave');
+INSERT INTO `areas` VALUES ('000004', '000000', 'Ecclesall Road', 'ecclesall_road');
+INSERT INTO `areas` VALUES ('000019', '000001', 'Carterknowle', 'carterknowle');
+INSERT INTO `areas` VALUES ('000018', '000001', 'Meadow Head', '');
+INSERT INTO `areas` VALUES ('000017', '000001', 'Hillsborough', '');
+INSERT INTO `areas` VALUES ('000016', '000001', 'Ecclesall', '');
+INSERT INTO `areas` VALUES ('000015', '000001', 'Crookes', '');
+INSERT INTO `areas` VALUES ('000014', '000001', 'Hollins End', '');
+INSERT INTO `areas` VALUES ('000013', '000001', 'Walkley', '');
+INSERT INTO `areas` VALUES ('000020', '000001', 'Hackenthorpe', 'hackenthorpe');
+INSERT INTO `areas` VALUES ('000021', '000001', 'Brightside', 'brightside');
+INSERT INTO `areas` VALUES ('000022', '000001', 'Totley', '');
+INSERT INTO `areas` VALUES ('000023', '000001', 'Dore', '');
+INSERT INTO `areas` VALUES ('000024', '000001', 'Jordanthorpe', '');
+INSERT INTO `areas` VALUES ('000025', '000001', 'Greenhill', '');
+INSERT INTO `areas` VALUES ('000026', '000001', 'Beauchief', '');
+INSERT INTO `areas` VALUES ('000027', '000001', 'Woodseats', '');
+INSERT INTO `areas` VALUES ('000028', '000001', 'Norton', '');
+INSERT INTO `areas` VALUES ('000029', '000001', 'Gleadless', '');
+INSERT INTO `areas` VALUES ('000030', '000001', 'Woodhouse', '');
+INSERT INTO `areas` VALUES ('000031', '000001', 'Handsworth', '');
+INSERT INTO `areas` VALUES ('000032', '000001', 'Manor', '');
+INSERT INTO `areas` VALUES ('000033', '000001', 'Gleadless Valley', '');
+INSERT INTO `areas` VALUES ('000034', '000001', 'Whirlow', '');
+INSERT INTO `areas` VALUES ('000035', '000001', 'Sharrow', '');
+INSERT INTO `areas` VALUES ('000036', '000001', 'Stannington', '');
+INSERT INTO `areas` VALUES ('000037', '000001', 'Loxley', '');
+INSERT INTO `areas` VALUES ('000039', '000001', 'Shirecliffe', '');
+INSERT INTO `areas` VALUES ('000040', '000001', 'Parson Cross', '');
+INSERT INTO `areas` VALUES ('000041', '000001', 'Shiregreen', '');
+INSERT INTO `areas` VALUES ('000042', '000001', 'Tinsley', '');
+INSERT INTO `areas` VALUES ('000044', '000001', 'Carbrook', '');
+INSERT INTO `areas` VALUES ('000045', '000001', 'Darnall', '');
+INSERT INTO `areas` VALUES ('000046', '000001', 'Attercliffe', '');
+INSERT INTO `areas` VALUES ('000047', '000001', 'Heeley', '');
+INSERT INTO `areas` VALUES ('000048', '000001', 'Stocksbridge', '');
+INSERT INTO `areas` VALUES ('000049', '000001', 'Outibridge', '');
+INSERT INTO `areas` VALUES ('000050', '000001', 'Worral', '');
+INSERT INTO `areas` VALUES ('000051', '000001', 'Grenoside', '');
+INSERT INTO `areas` VALUES ('000052', '000001', 'Chapeltown', '');
+INSERT INTO `areas` VALUES ('000053', '000001', 'Highgreen', '');
+INSERT INTO `areas` VALUES ('000054', '000001', 'Ecclesfield', '');
+INSERT INTO `areas` VALUES ('000055', '000001', 'Penistone', '');
+INSERT INTO `areas` VALUES ('000056', '000001', 'Mosborough', '');
+INSERT INTO `areas` VALUES ('000057', '000001', 'Waterthorpe', '');
+INSERT INTO `areas` VALUES ('000058', '000001', 'Halfway', '');
+INSERT INTO `areas` VALUES ('000059', '000001', 'Beighton', '');
+INSERT INTO `areas` VALUES ('000060', '000001', 'Treeton', '');
+INSERT INTO `areas` VALUES ('000061', '000001', 'Crosspool', 'crosspool');
+INSERT INTO `categories` VALUES ('100001', 'Restaurants', 'restaurants', 'nav_restaurants', '0000-00-00 00:00:00');
+INSERT INTO `categories` VALUES ('100002', 'Caf&eacute;s', 'cafes', 'nav_cafes', '0000-00-00 00:00:00');
+INSERT INTO `categories` VALUES ('100003', 'Bars & Pubs', 'bars_and_pubs', 'nav_bars', '0000-00-00 00:00:00');
+INSERT INTO `categories` VALUES ('100004', 'Entertainment', 'entertainment', 'nav_entertainment', '0000-00-00 00:00:00');
+INSERT INTO `categories` VALUES ('100005', 'Shopping', 'shopping', 'nav_shopping', '0000-00-00 00:00:00');
+INSERT INTO `categories` VALUES ('100006', 'Schools', 'schools', 'nav_schools', '0000-00-00 00:00:00');
+INSERT INTO `categories` VALUES ('100007', 'Health', 'health', 'nav_health', '0000-00-00 00:00:00');
+INSERT INTO `categories` VALUES ('100008', 'Hotels', 'hotels', 'nav_hotels', '0000-00-00 00:00:00');
+INSERT INTO `cities` VALUES ('000001', 'Sheffield', 'Sheffield');
+INSERT INTO `cities` VALUES ('000002', 'Portsmouth', 'Portsmouth');
+INSERT INTO `images` VALUES ('000052', '81', '0.00', '000000', '6348822scratch_senior.jpg', 'Papa Ciccio\'s', '000001', '000001', '1');
+INSERT INTO `images` VALUES ('000051', '79', '0.00', '000000', '771d965Blue Room.jpg', 'Blue Room Brasse', '000001', '000001', '1');
+INSERT INTO `images` VALUES ('000050', '78', '0.00', '000000', '3997c30Scan10014.JPG', 'Heel Meet Again', '000001', '000001', '1');
+INSERT INTO `images` VALUES ('000049', '77', '0.00', '000000', '8a8ecd1a7cbcd.castle-1.jpg', 'Cafe #9', '000001', '000001', '1');
+INSERT INTO `images` VALUES ('000048', '76', '0.00', '000000', '9bf1a6dimage-03.jpg', 'Shiraz', '000001', '000001', '1');
+INSERT INTO `images` VALUES ('000047', '75', '0.00', '000000', '59b81abimage-07.jpg', 'Kumquat Mae', '000001', '000001', '1');
+INSERT INTO `items` VALUES ('000082', 'The Grindstone', '1', '100003', '000021', '000000', '000000', '000000', '3.00', '2.00', '1145824294', '000000', '1145824294', '000000', '000000', 'not a valid url', 'not a valid telephone nu', 'not a valid address', '', '000015', '000001', '0000-00-00 00:00:00');
+INSERT INTO `items` VALUES ('000080', 'The Sheaf View', '1', '100003', '000021', '100003', '000036', '000000', '5.00', '4.00', '1145285074', '000000', '1145285074', '000000', '000000', 'http://www.abbeydalebrewery.co.uk/pubs/pubs.html#Sheaf_Viewhttp:', '0114 2496455', '25 Gleadless Road', '', '000000', '000001', '0000-00-00 00:00:00');
+INSERT INTO `items` VALUES ('000081', 'Papa Ciccio\'s', '1', '100001', '000005', '000000', '000000', '000052', '2.00', '3.00', '1145823354', '000000', '1145823354', '000000', '000000', 'not a valid url', '0114 268 4440', 'not a valid address', '', '000061', '000001', '0000-00-00 00:00:00');
+INSERT INTO `items` VALUES ('000079', 'Blue Room Brasserie', '1', '100001', '000000', '100001', '000015', '000051', '1.00', '3.00', '1145283573', '000000', '1145283573', '000000', '000000', 'http://www.blueroombrasserie.co.uk/', '0114 255 2004', '798 Chesterfield Road', 'S8 0SF ', '000000', '000001', '0000-00-00 00:00:00');
+INSERT INTO `items` VALUES ('000078', 'Heel Meet Again', '1', '100005', '000031', '100005', '000023', '000050', '3.00', '5.00', '1144679949', '000000', '1144679949', '000000', '000000', 'www.heelmeetagain.cobblernet.com', '0114 258 4536', '192 meadowbank Ave', 'S8 2HG', '000018', '000001', '0000-00-00 00:00:00');
+INSERT INTO `items` VALUES ('000077', 'Cafe #9', '1', '100002', '000029', '100002', '000019', '000049', '2.00', '3.00', '1144678390', '000000', '1144678390', '000000', '000000', 'www.cafe9.co.uk', '0114 258 3654', 'Nether Edge Shops', 'S7 19Y', '000001', '000001', '0000-00-00 00:00:00');
+INSERT INTO `items` VALUES ('000076', 'Shiraz', '1', '100001', '000010', '100001', '000000', '000048', '5.00', '4.00', '1144677785', '000000', '1144677785', '000000', '000000', 'www.shiraz.co.uk', '0114 258 6478', '753 Abbeydale Road', 'S7 9HF', '000019', '000001', '0000-00-00 00:00:00');
+INSERT INTO `items` VALUES ('000075', 'Kumquat Mae', '1', '100001', '000003', '100001', '000000', '000047', '4.00', '3.00', '1144673585', '000000', '1144673585', '000000', '000000', 'www.kumquatmae.co.uk', '0114 258 6178', '25 Abbeydale Road', 'S11 5HT', '000001', '000001', '0000-00-00 00:00:00');
+INSERT INTO `reviews` VALUES ('100001', '000075', '000001', 'Kumquat Mae', 'A lovely little vegetarian and vegan restaurant, BYOB, situated just outside sheffield city centre.', 'Excellent food, excellent service, a big thumbs up', '1', '4.00', '5.00', '3.00', '000000', '0', '000001', '0', '000000', '0000-00-00 00:00:00');
+INSERT INTO `reviews` VALUES ('100002', '000075', '000001', 'Kumquat Mae', 'A nasty little vegetarian and vegan restaurant, BYOB, situated just outside sheffield city centre.', 'Bad food, excellent service, a big thumbs down', '1', '1.00', '4.00', '3.00', '000000', '0', '000000', '0', '000000', '0000-00-00 00:00:00');
+INSERT INTO `sessions` VALUES ('1', 'bd04790aaf80c0c9f76d4080186c8fb2', 'BAh7BzoQZGVzdGluYXRpb24iJy9yZXN0YXVyYW50cy9hbGwvaXRlbV9waG90\nb3MvMS5qcGciCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpG\nbGFzaEhhc2h7AAY6CkB1c2VkewA=\n', '2006-09-18 15:14:25');
+INSERT INTO `subcategories` VALUES ('000002', '100001', 'Greek', 'greek');
+INSERT INTO `subcategories` VALUES ('000003', '100001', 'Vegetarian', 'vegetarian');
+INSERT INTO `subcategories` VALUES ('000004', '100001', 'Japanese', 'japanese');
+INSERT INTO `subcategories` VALUES ('000005', '100001', 'Italian', 'italian');
+INSERT INTO `subcategories` VALUES ('000006', '100001', 'Indian', 'indian');
+INSERT INTO `subcategories` VALUES ('000007', '100001', 'French', 'french');
+INSERT INTO `subcategories` VALUES ('000008', '100001', 'Fusion', 'fusion');
+INSERT INTO `subcategories` VALUES ('000009', '100001', 'Chinese', 'chinese');
+INSERT INTO `subcategories` VALUES ('000010', '100001', 'Middle Eastern', 'middle_eastern');
+INSERT INTO `subcategories` VALUES ('000011', '100002', 'Non-smoking', 'non-smoking');
+INSERT INTO `subcategories` VALUES ('000012', '100006', 'Primary', 'primary');
+INSERT INTO `subcategories` VALUES ('000013', '100007', 'GPs', 'gp_general_practicioner');
+INSERT INTO `subcategories` VALUES ('000014', '100008', 'FIve Star', '5_five_star');
+INSERT INTO `subcategories` VALUES ('000015', '100001', 'Michelin Star', 'micheling_star');
+INSERT INTO `subcategories` VALUES ('000016', '100004', 'Cinemas', 'cinema_cinemas_movies');
+INSERT INTO `subcategories` VALUES ('000017', '100004', 'Theatres', 'theatres');
+INSERT INTO `subcategories` VALUES ('000029', '100002', 'Smoking', 'smoking');
+INSERT INTO `subcategories` VALUES ('000030', '100002', 'Vegan', 'vegan');
+INSERT INTO `subcategories` VALUES ('000031', '100005', 'Shoe Shops', 'shoe_shops');
+INSERT INTO `subcategories` VALUES ('000032', '100001', 'Klingon', 'klingon');
+INSERT INTO `subcategories` VALUES ('000033', '100005', 'Butchers', 'butchers');
+INSERT INTO `subcategories` VALUES ('000034', '100002', 'Vegetarian', 'invalid subcat sysname');
+INSERT INTO `subcategories` VALUES ('000035', '100002', 'Organic', 'Wholefood');
+INSERT INTO `subcategories` VALUES ('000036', '100003', 'Real Ale', 'Micro Brewery');

@@ -1,0 +1,97 @@
+<% for item in @items%><%@title = item.item_name%><%end%>
+<table border="0" cellpadding="0" cellspacing="0" id="structure">
+	<tbody>
+    <%= render(:partial => "banner") %>
+    <%= render(:partial => "cat_menu") %>
+	<tr id="content">
+		<td class="left">&nbsp;</td>
+		<td class="main">
+			<div id="subnav_column" style="width:140px; margin:15px;">
+            <%= render(:partial => "type_menu") %>
+<script type="text/javascript"><!--
+google_ad_client = "pub-3798385704993195";
+google_ad_width = 120;
+google_ad_height = 600;
+google_ad_format = "120x600_as";
+google_ad_type = "text";
+google_ad_channel = "";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript"
+  src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+            <%= render(:partial => "search_box") %>
+			
+			</div>
+			<div id="main_column">
+				<div class="item">
+        			<!--div class="item_pic">
+        						<div class="item_pic_border">
+        									<img src="%%image%%"  alt="%%alt_tag%%">
+        						</div>
+        			</div-->
+        			<div class="item_rating">
+        			    <%@rating_average.times do%>
+						  <img src="/images/st1.gif" width="13" height="13" alt="Rated <%=@rating_average%>/5 for quality" />
+						<%end%>
+						<%(5 - @rating_average).times do%>
+						  <img src="/images/st0.gif" width="13" height="13" />
+						<%end%>
+        			</div>
+        			<div class="item_rating">
+        			    <%@value_average.times do%>
+						  <img src="/images/dlr1.gif" width="13" height="13" alt="Rated <%=@value_average%>/5 for value" />
+						<%end%>
+						<%(5 - @value_average).times do%>
+						  <img src="/images/dlr0.gif" width="13" height="13" />
+						<%end%>
+        			</div>
+        			<div class="item_rating">
+        			    <%@child_average.times do%>
+						  <img src="/images/family_on.gif" width="13" height="13" alt="Rated <%=@child_average%>/5 for child-friendliness" />
+						<%end%>
+						<%(5 - @child_average).times do%>
+						  <img src="/images/family_off.gif" width="13" height="13" />
+						<%end%>
+        			</div>
+        			<%for item in @items%>
+        			<h2><%=item.item_name%></h2>
+        			<h4><%=full_address(item.item_address,item.item_area,item.item_tel)%></h4>
+        			<%end%>
+        			<%for review in @reviews%>
+        			<p><%=review.review%><br />
+                    <span class="review_credit">Submitted by <strong><%=review.user.username%></strong> <%=time_ago_in_words(review.created_at)%> ago</span>
+                        <%if (session[:user_id]) && (review.user_id != session[:user_id])%>
+                        <%=review_rater(item.id,review.id,session[:user_id])%>
+                        <%end%>
+        			<%end%>
+        			</p>
+        			<%if @only_one_review_per_user.nitems == 0%>
+        			<%=link_to(@add_review_text, :action => "add_review", :cat_sys_name => params[:cat_sys_name], :subcat_sys_name => params[:subcat_sys_name], :subsubcat_sys_name => params[:subsubcat_sys_name], :id => params[:id])%>
+        			<%else%>
+        			<a disabled="true">You have already reviewed this item</a>
+        			<%end%>
+        			<%if session[:user_id]%>
+        			 <%if @item.user_id != session[:user_id]%>
+        			 &nbsp;|&nbsp;<%=link_to("Take ownership of this item", :action => "take_ownership", :cat_sys_name => params[:cat_sys_name], :subcat_sys_name => params[:subcat_sys_name], :subsubcat_sys_name => params[:subsubcat_sys_name], :id => @item.id)%>
+        			 <%end%>
+        		    <%end%>
+				</div>
+				<hr />
+
+			</div>
+			<br style="clear:all;" />
+			<%= render(:partial => "footer") %>
+		</td>
+		<td class="right">&nbsp;</td>
+	</tr>
+	<tr id="foot_cap">
+		<td class="left">&nbsp;</td>
+		<td class="main">
+			<div class="bottom_left_corner">&nbsp;</div><div class="bottom_right_corner">&nbsp;</div>&nbsp; 
+		</td>
+		<td class="right">&nbsp;</td>
+	</tr>
+	</tbody>
+</table>

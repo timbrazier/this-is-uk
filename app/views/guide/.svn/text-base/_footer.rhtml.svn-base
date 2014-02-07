@@ -1,0 +1,15 @@
+<div id="footer">
+    &copy;2008 <a href="http://peoplesguide.info" target="_blank">People's Guide</a> | <%=link_to("Contact",:controller=>"guide",:action=>"contact")%>
+    <%if session[:user_id]%> | <%=link_to("Log out",:controller=>"users",:action=>"logout")%>
+    <%else%>
+ | <%=link_to("Log in",:controller=>"users",:action=>"login")%>
+    <%end%>
+    <%if params[:cat_sys_name]%>
+ |  <%=link_to "Suggest new",:action=>"transfer",:cat_sys_name=>params[:cat_sys_name],:subcat_sys_name=>params[:subcat_sys_name],:subsubcat_sys_name=>params[:subsubcat_sys_name]%>
+    <%end%>
+    <%if @logged_in_user%>
+    <%if @logged_in_user.user_status=="admin"%>
+ |  <%=link_to("Admin",{:controller=>"admin",:action=>"index"},:target=>"_blank")%>
+    <%end%>
+    <%end%>
+</div>

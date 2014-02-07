@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="274"
+   name=""
+   committed-date="2008-03-27T12:35:37.216125Z"
+   url="http://www.blueshiftdesign.co.uk:81/svn-repos/this_is_uk/trunk"
+   kind="dir"
+   uuid="cf3b00ba-abda-3a43-a663-eef1b33534eb"
+   repos="http://www.blueshiftdesign.co.uk:81/svn-repos"
+   revision="274"/>
+<entry
+   name="test"
+   kind="dir"/>
+<entry
+   name="app"
+   kind="dir"/>
+<entry
+   name="log"
+   kind="dir"/>
+<entry
+   committed-rev="234"
+   name="Rakefile"
+   text-time="2008-03-27T12:39:30.000000Z"
+   committed-date="2008-03-17T20:42:13.362750Z"
+   checksum="17f2f134da4cd31ea095d5868ca89e86"
+   kind="file"
+   prop-time="2008-03-27T12:38:45.000000Z"/>
+<entry
+   committed-rev="234"
+   name=".project"
+   text-time="2008-03-27T12:39:30.000000Z"
+   committed-date="2008-03-17T20:42:13.362750Z"
+   checksum="8dbd0f89e0b84344ccf270c809335d2a"
+   kind="file"
+   prop-time="2008-03-27T12:38:45.000000Z"/>
+<entry
+   name="components"
+   kind="dir"/>
+<entry
+   name="db"
+   kind="dir"/>
+<entry
+   name="stuff"
+   kind="dir"/>
+<entry
+   name="resource"
+   kind="dir"/>
+<entry
+   name="spec"
+   kind="dir"/>
+<entry
+   name="domains"
+   kind="dir"/>
+<entry
+   name="remote"
+   kind="dir"/>
+<entry
+   name="vendor"
+   kind="dir"/>
+<entry
+   committed-rev="234"
+   name="README"
+   text-time="2008-03-27T12:39:30.000000Z"
+   committed-date="2008-03-17T20:42:13.362750Z"
+   checksum="5e384456c0d1fd0b702cb5fe760a420a"
+   kind="file"
+   prop-time="2008-03-27T12:38:45.000000Z"/>
+<entry
+   name="sql"
+   kind="dir"/>
+<entry
+   name="tmp"
+   kind="dir"/>
+<entry
+   committed-rev="234"
+   name="Capfile"
+   text-time="2008-03-27T12:39:30.000000Z"
+   committed-date="2008-03-17T20:42:13.362750Z"
+   checksum="0cebd6e604e84bce97ff37b7c5740360"
+   kind="file"
+   prop-time="2008-03-27T12:38:45.000000Z"/>
+<entry
+   name="script"
+   kind="dir"/>
+<entry
+   name="doc"
+   kind="dir"/>
+<entry
+   name="config"
+   kind="dir"/>
+<entry
+   name="lib"
+   kind="dir"/>
+<entry
+   committed-rev="234"
+   name=".loadpath"
+   text-time="2008-03-27T12:39:30.000000Z"
+   committed-date="2008-03-17T20:42:13.362750Z"
+   checksum="28a2b8ba939900712fe5a15a94482113"
+   kind="file"
+   prop-time="2008-03-27T12:38:45.000000Z"/>
+<entry
+   name="public"
+   kind="dir"/>
+</wc-entries>

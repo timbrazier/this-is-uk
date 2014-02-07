@@ -1,0 +1,11 @@
+	<tr id="nav">
+		<td class="left">&nbsp;</td>
+		<td class="main">
+			<ul id="nav_list">
+			    <% for category in @categories %>
+				<li id="<%=category.cat_style%>" <%if category.cat_sys_name==params[:cat_sys_name]%>class="on_state"><%else%>class="off_state"><%end%><%=link_to(category.cat_name, :action => "categories", :cat_sys_name => category.cat_sys_name, :subcat_sys_name => "all", :subsubcat_sys_name => "all")%></li>
+				<% end %>
+			</ul>
+		</td>
+		<td class="right">&nbsp;</td>
+	</tr>

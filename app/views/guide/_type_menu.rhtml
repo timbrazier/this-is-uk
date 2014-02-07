@@ -1,0 +1,14 @@
+				<div class="drop_shadow">
+					<div class="side_box">
+						<h2>Type</h2>
+						<ul id="type_list">
+							<li <%if params[:subcat_sys_name]=="all"%>class="state_on"<%end%>><%=link_to("All", :action => "categories", :cat_sys_name => params[:cat_sys_name], :subcat_sys_name => "all", :subsubcat_sys_name => "all")%></li>
+							<%for subcategory in @subcategories%>
+							<li <%if subcategory.subcat_sys_name==params[:subcat_sys_name]%>class="state_on"<%end%>><%=link_to(subcategory.subcat_name, :action => "categories", :cat_sys_name => params[:cat_sys_name], :subcat_sys_name => subcategory.subcat_sys_name, :subsubcat_sys_name => "all")%></a></li>
+							<%if subcategory.subcat_sys_name==params[:subcat_sys_name]%>
+							<%= render(:partial => "subtype_menu") %>
+							<%end%>
+							<%end%>
+						</ul>
+					</div>
+					<p></p>

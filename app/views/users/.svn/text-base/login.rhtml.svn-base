@@ -1,0 +1,57 @@
+<table border="0" cellpadding="0" cellspacing="0" id="structure">
+	<tbody>
+    <%= render(:partial => "guide/banner") %>
+	<tr id="nav">
+		<td class="left">&nbsp;</td>
+		<td class="main">
+			<ul id="nav_list">
+				<li id="nav_restaurants" class="on_state"><a href="#">Login</a></li>
+			</ul>
+		</td>
+		<td class="right">&nbsp;</td>
+	</tr>
+	<tr id="content">
+		<td class="left">&nbsp;</td>
+		<td class="main">
+			<div id="subnav_column">
+			
+				<div class="drop_shadow">
+					<div class="side_box">
+						<h2>Login</h2>
+						<ul id="type_list">
+							<li><a>Step 1</a></li>
+
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div id="main_column">
+				<h1>Please Log In</h1>
+				<div class="item">
+					<h2>Please enter your username and password</h2>
+					<h4>Not got a username? Please <%=link_to("register!",:action =>"register")%> It's quick, easy and free!</h4>
+					<span style="height:300px; background-color:#efe"><p>&nbsp;</p></span>
+					<form action="" method="POST">
+					<p><%= text_field("user", "username", "length" => "10" ) %></p>
+					<p><%= password_field("user", "password", "length" => "10" ) %></p>
+					<p><input type="submit" name="submit" value="submit"></p>
+			
+				</div><!-- / item -->
+				
+				<hr />				
+			</div>
+			
+			<br style="clear:all;" />
+			<%= render(:partial => "guide/footer") %>
+		</td>
+		<td class="right">&nbsp;</td>
+	</tr>
+	<tr id="foot_cap">
+		<td class="left">&nbsp;</td>
+		<td class="main">
+			<div class="bottom_left_corner">&nbsp;</div><div class="bottom_right_corner">&nbsp;</div>&nbsp; 
+		</td>
+		<td class="right">&nbsp;</td>
+	</tr>
+	</tbody>
+</table>

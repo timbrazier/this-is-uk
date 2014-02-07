@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="234"
+   name=""
+   committed-date="2008-03-17T20:42:13.362750Z"
+   url="http://www.blueshiftdesign.co.uk:81/svn-repos/this_is_uk/trunk/public/javascripts"
+   kind="dir"
+   uuid="cf3b00ba-abda-3a43-a663-eef1b33534eb"
+   repos="http://www.blueshiftdesign.co.uk:81/svn-repos"
+   revision="274"/>
+<entry
+   committed-rev="234"
+   name="prototype.js"
+   text-time="2008-03-27T12:39:30.000000Z"
+   committed-date="2008-03-17T20:42:13.362750Z"
+   checksum="f57aaa32617e68bc8328178fd26c1f52"
+   kind="file"
+   prop-time="2008-03-27T12:39:29.000000Z"/>
+<entry
+   committed-rev="234"
+   name="admin.js"
+   text-time="2008-03-27T12:39:30.000000Z"
+   committed-date="2008-03-17T20:42:13.362750Z"
+   checksum="d41d8cd98f00b204e9800998ecf8427e"
+   kind="file"
+   prop-time="2008-03-27T12:39:29.000000Z"/>
+<entry
+   committed-rev="234"
+   name="effects.js"
+   text-time="2008-03-27T12:39:30.000000Z"
+   committed-date="2008-03-17T20:42:13.362750Z"
+   checksum="1bf9e7ea099a222968c0f52cdee468be"
+   kind="file"
+   prop-time="2008-03-27T12:39:29.000000Z"/>
+<entry
+   committed-rev="234"
+   name="dragdrop.js"
+   text-time="2008-03-27T12:39:30.000000Z"
+   committed-date="2008-03-17T20:42:13.362750Z"
+   checksum="7d686eb473f836647e9d95cc13655dd3"
+   kind="file"
+   prop-time="2008-03-27T12:39:30.000000Z"/>
+<entry
+   committed-rev="234"
+   name="application.js"
+   text-time="2008-03-27T12:39:30.000000Z"
+   committed-date="2008-03-17T20:42:13.362750Z"
+   checksum="8a750594360b0bd302e15147eacadc9a"
+   kind="file"
+   prop-time="2008-03-27T12:39:30.000000Z"/>
+<entry
+   committed-rev="234"
+   name="controls.js"
+   text-time="2008-03-27T12:39:30.000000Z"
+   committed-date="2008-03-17T20:42:13.362750Z"
+   checksum="23cef7404ffe6d410b0c235433771d51"
+   kind="file"
+   prop-time="2008-03-27T12:39:30.000000Z"/>
+<entry
+   committed-rev="234"
+   name="misc_functions.js"
+   text-time="2008-03-27T12:39:30.000000Z"
+   committed-date="2008-03-17T20:42:13.362750Z"
+   checksum="0c7f3d434fbee512b82ea15b5cd1a3fa"
+   kind="file"
+   prop-time="2008-03-27T12:39:30.000000Z"/>
+</wc-entries>

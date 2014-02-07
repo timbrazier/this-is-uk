@@ -1,0 +1,51 @@
+		body {
+			font-family:verdana,sans-serif;
+			font-size:.8em;
+		}
+		div.box {
+			float:left;
+			margin:.5%;
+		}
+		div.box.narrow {
+			width:40%;
+		}
+		div.box.wide {
+			width:55%;
+		}
+		.alert {
+			color:red;
+		}
+		table {
+			border-top:1px solid #ccc;
+			border-left:1px solid #ccc;
+			margin-bottom:3px;
+			width:100%;
+		}
+		th {
+			padding:.3em;
+			border-right:1px solid #999;
+			border-bottom:1px solid #999;
+			text-align:left;
+			color:#003;
+		}
+		tr {
+			vertical-align:top;
+		}
+		td {
+			padding:.3em;
+			border-right:1px solid #999;
+			border-bottom:1px solid #999;
+			background-color:#fff;
+		}
+		table img {
+			margin:0 1px;
+		}
+		#review-pic {
+			border:2px solid;
+			border-color:#eee #999 #666 #bbb;
+			float:left;
+		}
+		.clear-all {
+			clear:both;
+			font-size:.001em;
+		}

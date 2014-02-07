@@ -1,0 +1,11 @@
+				<div class="drop_shadow">
+					<div class="side_box">
+						<h2>Area</h2>
+						<ul id="area_list">
+							<li <%if params[:area]=="all"%>class="state_on"<%end%>><%=link_to("All", :action => "categories", :cat_sys_name => params[:cat_sys_name], :area => "all")%></li>
+							<% for area in @areas %>
+							<li <%if area.area_name==params[:area]%>class="state_on"<%end%>><%=link_to(area.area_name, :action => "categories", :cat_sys_name => params[:cat_sys_name], :subcat_sys_name => params[:subcat_sys_name], :area => area.area_name)%></li>
+                            <% end %>
+						</ul>
+					</div>
+				</div>

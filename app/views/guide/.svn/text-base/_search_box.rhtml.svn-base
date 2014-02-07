@@ -1,0 +1,10 @@
+					<p></p>
+    					<div class="side_box">
+    					<h2>Search</h2>
+    					<%= start_form_tag  :action => 'search_results'%>
+                        &nbsp;<%= text_field_with_auto_complete :item, :item_name, {"size" => 13},:indicator => "indicator",:frequency=>0.5 %>
+                        <%= image_tag("loading_small.gif",:id => 'indicator',:style => 'display:none')%>
+                        <%= end_form_tag %>
+                        <p></p>
+                        </div>
+    				</div>

@@ -1,0 +1,164 @@
+<table border="0" cellpadding="0" cellspacing="0" id="structure">
+	<tbody>
+    <%= render(:partial => "banner") %>
+	<tr id="nav">
+		<td class="left">&nbsp;</td>
+		<td class="main">
+			<ul id="nav_list">
+				<li id="nav_restaurants" class="on_state"><a href="addnew.php">Add Stuff</a></li>
+			</ul>
+		</td>
+		<td class="right">&nbsp;</td>
+	</tr>
+	<tr id="content">
+		<td class="left">&nbsp;</td>
+		<td class="main">
+    <%= render(:partial => "add_list") %>
+			<div id="main_column">
+	<h1>Add an item</h1>
+	<div class="item">
+
+    <%= error_messages_for(:item) %>
+    <%=form_tag%>
+	<table>
+    <tr>
+    <td align="right" valign="top">Item Title <%=@subcat_sys_name%></td>
+    <td>&nbsp;</td>
+    <td align="left" valign="top"><input name="item_name" type="text" id="item_name" size="18" maxlength="128" />
+    <%if request.post?%><%=error_message_on(:item,:item_name)%><%end%></td>
+  </tr>
+  <tr>
+    <td align="right" valign="top">Subcategory</td>
+    <td>&nbsp;</td>
+    <td align="left" valign="top">
+    <div id="subcats">
+      <select name="subcategory_id" id="subcategory_id">
+      <%if ! @subcategory%>
+      <option value = "0">Select...</option>
+      <%end%>
+      <%for subcategory in @subcategories%>
+      <option value = "<%=subcategory.id%>"
+      <%if @subcategory && subcategory.id==@subcategory.id%>
+      selected
+      <%end%>
+      ><%=subcategory.subcat_name%></option>
+      <%end%>
+    </select>
+        <%= image_tag("loading_small.gif",
+                        :id => 'indicator3',
+                        :style => 'display:none')%>
+    </div>
+    </td>
+  </tr>
+  <tr>
+    <td align="right" valign="top">Subsubcategory</td>
+    <td>&nbsp;</td>
+    <td align="left" valign="top">
+    <div id="subsubcats">
+      <select name="subsubcategory_id" id="subsubcategory_id" <%if ! @subcategory%>disabled = "true"<%end%>>
+      <%if ! @subsubcategory%>
+      <option value="0">Select...</option>
+      <%end%>
+      <%if @subsubcategories
+        for subsubcategory in @subsubcategories%>
+      <option value="<%=subsubcategory.id%>"
+      <%if @subsubcategory && subsubcategory.id==@subsubcategory.id%>
+      selected
+      <%end%>
+      ><%=subsubcategory.subsubcat_name%></option>
+      <%  end
+      end%>
+    </select>
+    </div>
+    </td>
+  </tr>
+  <tr>
+    <td align="right" valign="top">URL</td>
+    <td>&nbsp;</td>
+    <td align="left" valign="top"><input name="item_url" type="text" id="item_url" /></td>
+  </tr>
+  <tr>
+    <td align="right" valign="top">Tel</td>
+    <td>&nbsp;</td>
+    <td align="left" valign="top"><input name="item_tel" type="text" id="item_tel" value="<%=@phone_prefix%>"/></td>
+  </tr>
+  <tr>
+    <td align="right" valign="top">Street address</td>
+    <td>&nbsp;</td>
+    <td align="left" valign="top"><input name="item_address" type="text" id="item_address" /></td>
+  </tr>
+    <tr>
+    <td align="right" valign="top">Area</td>
+    <td>&nbsp;</td>
+    <td align="left" valign="top">
+    <%= text_field_with_auto_complete :area, :area_name, {"size" => 20},
+                      :indicator => "indicator2" %>
+    <%= image_tag("loading_small.gif",
+                        :id => 'indicator2',
+                        :style => 'display:none')%>
+    </td>
+  </tr>
+  <tr>
+    <td align="right" valign="top">City</td>
+    <td>&nbsp;</td>
+    <td align="left" valign="top"><%=@current_city.city_long_name%><input type="hidden" value="$citycode" name="city" />
+   </td>
+  </tr>
+  <tr>
+    <td align="right" valign="top">Postcode</td>
+    <td>&nbsp;</td>
+    <td align="left" valign="top"><input name="item_pocode" type="text" id="item_pocode" /></td>
+  </tr>
+  
+    <!--tr>
+    <td width="35%" align="right" valign="top">Upload a JPEG image</td>
+    <td width="5%">&nbsp;</td>
+    <td width="65%" align="left" valign="top"><%=file_field("picture","picture")%></td>
+  </tr-->
+  <tr>
+  	<td></td>
+    <td>&nbsp;</td>
+	<td align="left"><input type="checkbox" value="1" id="ownership" name="ownership" /><label for="ownership">I own this business</label></td>
+  </tr>
+   <tr>
+    <td width="35%" align="right" valign="top">&nbsp;</td>
+    <td width="5%">&nbsp;</td>
+    <td width="65%" align="left" valign="top"><input type="submit" name="Submit" value="Submit" /></td>
+  </tr>
+</tr>
+</table>
+<%=end_form_tag%>
+    <%= form_remote_tag(:update => "subcats", :url => {:action => :subcat_list})%>
+
+    <%= observe_field(:category_id,
+                      :frequency    => 1,
+                      :update       => :subcats,
+                      :url          => { :action => :subcat_list },
+                      :loading => "Element.show('indicator1')",
+                      :with => "'category=' + encodeURIComponent(value)",
+                      :complete => "Element.hide('indicator1')")%>
+    <%=end_form_tag%>
+    <%= form_remote_tag(:update => "subsubcats", :url => {:action => :subsubcat_list})%>
+
+    <%= observe_field(:subcategory_id,
+                      :frequency    => 1,
+                      :update       => :subsubcats,
+                      :url          => { :action => :subsubcat_list },
+                      :loading => "Element.show('indicator3')",
+                      :complete => "Element.hide('indicator3')")%>
+    <%=end_form_tag%>
+</div>
+			</div>
+			<%= render(:partial => "footer") %>
+		</td>
+		<td class="right">&nbsp;</td>
+	</tr>
+	<tr id="foot_cap">
+		<td class="left">&nbsp;</td>
+		<td class="main">
+			<div class="bottom_left_corner">&nbsp;</div><div class="bottom_right_corner">&nbsp;</div>&nbsp; 
+		</td>
+		<td class="right">&nbsp;</td>
+	</tr>
+	</tbody>
+</table>

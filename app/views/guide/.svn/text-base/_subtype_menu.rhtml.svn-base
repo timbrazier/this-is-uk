@@ -1,0 +1,5 @@
+						<ul id="subtype_list">
+							<%for subsubcategory in @subsubcategories%>
+							<li><%=link_to(subsubcategory.subsubcat_name, :action => "categories", :cat_sys_name => params[:cat_sys_name], :subcat_sys_name => params[:subcat_sys_name], :subsubcat_sys_name => subsubcategory.subsubcat_sys_name)%></a></li>
+							<%end%>
+						</ul>

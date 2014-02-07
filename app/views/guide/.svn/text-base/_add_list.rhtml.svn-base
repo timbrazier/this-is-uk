@@ -1,0 +1,16 @@
+			<div id="subnav_column">
+				<div class="drop_shadow">
+					<div class="side_box">
+						<h2>Add New...</h2>
+						<ul id="type_list">
+						    <li><%=link_to("Item", :action => :add_business, :cat_sys_name=>params[:cat_sys_name])%></li>
+						    <%if @logged_in_user.user_status=="admin"%>
+							<li><%=link_to("Sub-category", :action => :add_subcat)%></li>
+							<li><%=link_to("Sub-sub-category", :action => :add_subsubcat)%></li>
+							<li><%=link_to("City", :action => :add_city)%></li>
+							<li><%=link_to("Area", :action => :add_area)%></li>
+							<%end%>
+						</ul>
+					</div>
+				</div>
+			</div>

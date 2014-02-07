@@ -1,0 +1,11 @@
+      <select name="item[subcategory_id]" id="item_subcategory_id">
+      <%for subcategory in @subcategories%>
+      <option value = "<%=subcategory.id%>"><%=subcategory.subcat_name%></option>
+      <%end%>
+    </select>
+    <%= observe_field(:item_subcategory_id,
+                      :frequency    => 1,
+                      :update       => :subsubcats,
+                      :url          => { :action => :subsubcat_list },
+                      :loading => "Element.show('indicator3')",
+                      :complete => "Element.hide('indicator3')")%>

@@ -1,0 +1,30 @@
+
+
+Processing InfoController#properties (for 89.240.127.56 at 2006-09-28 23:50:54) [GET]
+  Session ID: 67a6601472892be3ed93da7c31e60175
+  Parameters: {"action"=>"properties", "controller"=>"rails/info"}
+Completed in 0.00097 (1034 reqs/sec) | Rendering: 0.00005 (5%) | DB: 0.00000 (0%) | 500 [http://thisissheffield.info/rails/info/properties]
+
+
+Processing Base#index (for 89.240.127.56 at 2006-09-28 23:51:02) [GET]
+  Session ID: 67a6601472892be3ed93da7c31e60175
+  Parameters: {}
+
+
+SyntaxError (../config/../app/controllers/guide_controller.rb:83: parse error, unexpected ')', expecting $
+5) * (5 / 4)
+  ^):
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.3.1/lib/active_support/dependencies.rb:140:in `load'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.3.1/lib/active_support/dependencies.rb:140:in `load'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.3.1/lib/active_support/dependencies.rb:56:in `require_or_load'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.3.1/lib/active_support/dependencies.rb:30:in `depend_on'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.3.1/lib/active_support/dependencies.rb:85:in `require_dependency'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.3.1/lib/active_support/dependencies.rb:98:in `const_missing'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.3.1/lib/active_support/dependencies.rb:131:in `const_missing'
+    generated/routing/recognition.rb:44:in `recognize_path'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.12.5/lib/action_controller/routing.rb:511:in `recognize!'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-1.1.6/lib/dispatcher.rb:38:in `dispatch'
+    dispatch.cgi:10
+
+
+Rendering /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.12.5/lib/action_controller/templates/rescues/layout.rhtml (500 Internal Error)

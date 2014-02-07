@@ -1,0 +1,81 @@
+<% @title = @page_title%>
+<table border="0" cellpadding="0" cellspacing="0" id="structure">
+	<tbody>
+    <%= render(:partial => "banner") %>
+    <%= render(:partial => "cat_menu") %>
+	<tr id="content">
+		<td class="left">&nbsp;</td>
+		<td class="main">
+			<div id="subnav_column" style="width:140px; margin:15px; padding-top:18px;">
+            <%= render(:partial => "type_menu") %>
+<script type="text/javascript"><!--
+google_ad_client = "pub-3798385704993195";
+google_ad_width = 120;
+google_ad_height = 600;
+google_ad_format = "120x600_as";
+google_ad_type = "text";
+google_ad_channel = "";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript"
+  src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+            <%= render(:partial => "search_box") %>
+			</div>
+			<div id="main_column">
+				<div style="text-align:right;">
+				<%=add_business_decider%>
+				</div>
+				<h1><%=@page_title%></h1>
+				<%for item in @items%>
+				<%@ratings = Review.find_by_sql(["select avg(rev_rating) as rev_average, avg(rev_value) as rev_value, avg(rev_child) as rev_child from reviews where item_id=?",item.id])%>
+				<%for rating in @ratings%><%rev_multiplier = rating.rev_average.to_i%><%value_multiplier = rating.rev_value.to_i%><%child_multiplier = rating.rev_child.to_i%><%end%>
+				<div class="item">
+					<!--div class="item_pic"><div class="item_pic_border"><img src="item_photos/1.jpg" width="73" height="101" alt="" /></div></div-->
+					<div class="item_rating">
+                        <%rev_multiplier.times do%>
+						<img src="/images/st1.gif" width="13" height="13" alt="Rated <%=rev_multiplier%>/5 for quality" />
+                        <%end%>
+                        <%(5 - rev_multiplier).times do%>
+					    <img src="/images/st0.gif" width="13" height="13" />
+					    <%end%>
+					</div>
+					<div class="item_rating">
+					    <%value_multiplier.times do%>
+					    <img src="/images/dlr1.gif" width="13" height="13" alt="Rated <%=value_multiplier%>/5 for value" />
+                        <%end%>
+                        <%(5 - value_multiplier).times do%>
+					    <img src="/images/dlr0.gif" width="13" height="13" />
+					    <%end%>
+					</div>
+					<div class="item_rating">
+					    <%child_multiplier.times do%>
+					    <img src="/images/family_on.gif" width="13" height="13" alt="Rated <%=child_multiplier%>/5 for child-friendliness" />
+                        <%end%>
+                        <%(5 - child_multiplier).times do%>
+					    <img src="/images/family_off.gif" width="13" height="13" />
+					    <%end%>
+					</div>
+					<h2><%=link_to(item.item_name, :action => "detail", :cat_sys_name => params[:cat_sys_name], :subcat_sys_name => params[:subcat_sys_name], :subsubcat_sys_name => params[:subsubcat_sys_name], :id => item.id)%></h2>
+					<h4><%=full_address(item.item_address,item.item_area,item.item_tel)%></h4>
+					<p><%if item.review && item.review.length > 100%><%=item.review[0,97]+"..."%><%else%><%=item.review%><%end%>
+					</p>
+				</div>
+				<hr />
+				<%end%>
+			</div>
+            <br style="clear:all;" />
+			<%= render(:partial => "footer") %>
+		</td>
+		<td class="right">&nbsp;</td>
+	</tr>
+	<tr id="foot_cap">
+		<td class="left">&nbsp;</td>
+		<td class="main">
+			<div class="bottom_left_corner">&nbsp;</div><div class="bottom_right_corner">&nbsp;</div>&nbsp; 
+		</td>
+		<td class="right">&nbsp;</td>
+	</tr>
+	</tbody>
+</table>

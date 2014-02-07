@@ -1,0 +1,40 @@
+<%= error_messages_for 'review' %>
+
+<!--[form:review]-->
+<p><label for="review_rev_title">Rev title</label><br/>
+<%= text_field 'review', 'rev_title'  %></p>
+
+<p><label for="review_rev_desc">Rev desc</label><br/>
+<%= text_area 'review', 'rev_desc'  %></p>
+
+<p><label for="review_rev_comments">Rev comments</label><br/>
+<%= text_area 'review', 'rev_comments'  %></p>
+
+<p><label for="review_rev_status">Rev status</label><br/>
+<%= text_field 'review', 'rev_status'  %></p>
+
+<p><label for="review_rev_rating">Rev rating</label><br/>
+<%= text_field 'review', 'rev_rating'  %></p>
+
+<p><label for="review_rev_value">Rev value</label><br/>
+<%= text_field 'review', 'rev_value'  %></p>
+
+<p><label for="review_rev_mod_rating">Rev mod rating</label><br/>
+<%= text_field 'review', 'rev_mod_rating'  %></p>
+
+<p><label for="review_rev_mod_event">Rev mod event</label><br/>
+<%= text_field 'review', 'rev_mod_event'  %></p>
+
+<p><label for="review_rev_created">Rev created</label><br/>
+<%= text_field 'review', 'rev_created'  %></p>
+
+<p><label for="review_rev_created_user">Rev created user</label><br/>
+<%= text_field 'review', 'rev_created_user'  %></p>
+
+<p><label for="review_rev_modified">Rev modified</label><br/>
+<%= text_field 'review', 'rev_modified'  %></p>
+
+<p><label for="review_rev_modified_user">Rev modified user</label><br/>
+<%= text_field 'review', 'rev_modified_user'  %></p>
+<!--[eoform:review]-->
+

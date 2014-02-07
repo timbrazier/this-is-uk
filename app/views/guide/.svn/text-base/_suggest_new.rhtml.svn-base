@@ -1,0 +1,11 @@
+<div align="right">
+<!--select id="suggest_new">
+    <option value = "">Suggest new...</option>
+    <option value = "/<%=@category.cat_sys_name%>/add_item"><%=@category.cat_name%></option>
+    <option value = "/guide/add_subcat">Sub-category</option>
+    <option value = "/guide/add_subsubcat">Sub-sub-category</option>
+    <option value = "/guide/add_city">City</option>
+    <option value = "/guide/add_area">Area</option>
+</select-->
+<%=button_to "Add an item",:action=>"transfer",:cat_sys_name=>params[:cat_sys_name],:subcat_sys_name=>params[:subcat_sys_name],:subsubcat_sys_name=>params[:subsubcat_sys_name]%>
+</div>

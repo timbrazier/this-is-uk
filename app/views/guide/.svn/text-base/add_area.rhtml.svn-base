@@ -1,0 +1,52 @@
+<table border="0" cellpadding="0" cellspacing="0" id="structure">
+	<tbody>
+    <%= render(:partial => "banner") %>
+	<tr id="nav">
+		<td class="left">&nbsp;</td>
+		<td class="main">
+			<ul id="nav_list">
+				<li id="nav_restaurants" class="on_state"><a href="addnew.php">Add Stuff</a></li>
+			</ul>
+		</td>
+		<td class="right">&nbsp;</td>
+	</tr>
+	<tr id="content">
+		<td class="left">&nbsp;</td>
+		<td class="main">
+    <%= render(:partial => "add_list") %>
+			<div id="main_column">
+	<h1>Add an area<%= image_tag("loading_small.gif",
+                        :id => 'indicator',
+                        :style => 'display:none')%></h1>
+	<div class="item">
+
+    <%= error_messages_for(:area) %>
+    <%=form_tag%>
+	<table>
+  <tr>
+    <td align="right" valign="top">Area</td>
+    <td>&nbsp;</td>
+    <td align="left" valign="top"><input name="area_name" type="text" id="area_name" /></td>
+  </tr>
+    <tr>
+    <td width="35%" align="right" valign="top">&nbsp;</td>
+    <td width="5%">&nbsp;</td>
+    <td width="65%" align="left" valign="top"><input type="submit" name="Submit" value="Submit" /></td>
+  </tr>
+<tr>
+</table>
+</div>
+			</div>
+			<%= render(:partial => "footer") %>
+		</td>
+		<td class="right">&nbsp;</td>
+	</tr>
+	<tr id="foot_cap">
+		<td class="left">&nbsp;</td>
+		<td class="main">
+			<div class="bottom_left_corner">&nbsp;</div><div class="bottom_right_corner">&nbsp;</div>&nbsp; 
+		</td>
+		<td class="right">&nbsp;</td>
+	</tr>
+	</tbody>
+</table>

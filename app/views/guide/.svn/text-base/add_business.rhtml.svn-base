@@ -1,0 +1,159 @@
+<table border="0" cellpadding="0" cellspacing="0" id="structure">
+  <tbody>
+    <%= render(:partial => "banner") %>
+    <tr id="nav">
+        <td class="left">&nbsp;</td>
+        <td class="main">
+            <ul id="nav_list">
+                <li id="nav_restaurants" class="on_state"><a href="addnew.php">Add Stuff</a></li>
+            </ul>
+        </td>
+        <td class="right">&nbsp;</td>
+    </tr>
+    <tr id="content">
+        <td class="left">&nbsp;</td>
+	<td class="main">
+            <%= render(:partial => "add_list") %>
+            <div id="main_column">
+            <h1>Add Your Business</h1>
+            <div class="item">
+                <%= error_messages_for(:item) %>
+                    <%form_for :item, :html => {:id=>"item_form"} do |i|%>
+                    <table>
+                        <tr>
+                            <td align="right" valign="top" width="125">Item Title</td>
+                            <td width="20">&nbsp;</td>
+                            <td align="left" valign="top">
+                                <%=i.text_field :item_name, :size=>20, :maxlength=>128%>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="right" valign="top">Category</td>
+                            <td>&nbsp;</td>
+                            <td align="left" valign="top">
+                                <select name="item[category_id]" id="item_category_id">
+                                    <%for category in @categories%>
+                                    <option value="<%=category.id%>" <%=select_decider("category",category,@item)%>><%=category.cat_name%></option>
+                                    <%end%>
+                                </select>
+                                <%= image_tag("loading_small.gif",
+                                                :id => 'indicator3',
+                                                :style => 'display:none')%>
+                            </td>
+                        </tr>
+                    </table>
+                    <div id="both_lists">
+                        <table>
+                            <tr>
+                                <td align="right" valign="top" width="125">Subcategory</td>
+                                <td width="20">&nbsp;</td>
+                                <td align="left" valign="top">
+                                  <div id="subcats" align="left">
+                                    <select name="item[subcategory_id]" id="item_subcategory_id">
+                                        <%for subcategory in @subcategories%>
+                                        <option value = "<%=subcategory.id%>" <%=select_decider("subcategory",subcategory,@item)%>><%=subcategory.subcat_name%></option>
+                                        <%end%>
+                                    </select>
+                                    <%= image_tag("loading_small.gif",
+                                                      :id => 'indicator3',
+                                                      :style => 'display:none')%>
+                                  </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="right" valign="top">Subsubcategory</td>
+                                <td>&nbsp;</td>
+                                <td align="left" valign="top">
+                                    <div id="subsubcats">
+                                        <select name="item[subsubcategory_id]" id="item_subsubcategory_id">
+                                            <%for subsubcategory in @subsubcategories%>
+                                                <option value="<%=subsubcategory.id%>" <%=select_decider("subsubcategory",subsubcategory,@item)%>><%=subsubcategory.subsubcat_name%></option>
+                                            <%  end%>
+                                        </select>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <table>
+                        <tr>
+                            <td align="right" valign="top" width="125">URL</td>
+                            <td width="10">&nbsp;</td>
+                            <td align="left" valign="top">
+                                <%=i.text_field :item_url, :size=>20%>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="right" valign="top">Tel</td>
+                            <td>&nbsp;</td>
+                            <td align="left" valign="top">
+                                <%=i.text_field :item_tel, :size=>20, :value=>@current_city.phone_prefix %>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="right" valign="top">Street address</td>
+                            <td>&nbsp;</td>
+                            <td align="left" valign="top">
+                                <%=i.text_field :item_address, :size=>20%>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="right" valign="top">Area</td>
+                            <td>&nbsp;</td>
+                            <td align="left" valign="top">
+                                <%= text_field_with_auto_complete :area, :area_name, {"size" => 20},
+                                    :indicator => "indicator2" %>
+                                <%= image_tag("loading_small.gif",
+                                    :id => 'indicator2',
+                                    :style => 'display:none')%>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="right" valign="top">City</td>
+                            <td>&nbsp;</td>
+                            <td align="left" valign="top">
+                                <%=@current_city.city_longname%><input type="hidden" value="$citycode" name="city" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="right" valign="top">Postcode</td>
+                            <td>&nbsp;</td>
+                            <td align="left" valign="top">
+                                <%=i.text_field :item_pocode, :size=>20%>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>&nbsp;</td>
+                            <td align="left"><input type="checkbox" value="1" id="ownership" name="ownership" /><label for="ownership">I own this business</label></td>
+                        </tr>
+                        <tr>
+                            <td width="35%" align="right" valign="top">&nbsp;</td>
+                            <td width="5%">&nbsp;</td>
+                            <td width="65%" align="left" valign="top"><input type="submit" name="Submit" value="Submit" /></td>
+                        </tr>
+                    </table>
+                <%end%>
+
+    <%= observe_form(:item_form,
+                     :frequency    => 1,
+                     :update       => :both_lists,
+                     :url          => { :action => :both_lists },
+                     :loading => "Element.show('indicator3')",
+                     :complete => "Element.hide('indicator3')")%>
+
+                </div>
+            </div>
+                <%= render(:partial => "footer") %>
+        </td>
+        <td class="right">&nbsp;</td>
+    </tr>
+    <tr id="foot_cap">
+        <td class="left">&nbsp;</td>
+            <td class="main">
+                <div class="bottom_left_corner">&nbsp;</div><div class="bottom_right_corner">&nbsp;</div>&nbsp; 
+            </td>
+            <td class="right">&nbsp;</td>
+    </tr>
+  </tbody>
+</table>

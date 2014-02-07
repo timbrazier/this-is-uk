@@ -1,0 +1,67 @@
+<div class="box wide">
+	<h2>New reviews</h2>
+	<table border="0" cellpadding="0" cellspacing="0">
+		<col style="width:20%;" />
+		<col style="width:40%;" />
+		<col style="width:20%;" />
+		<col style="width:20%;" />
+		<thead>
+		  <tr>
+		      <th>Submitted</th>
+		      <th>Item</th>
+		      <th>User</th>
+		      <th>Rating</th>
+		      <th>Value</th>
+		  </tr>
+		<tbody>
+		<%for review in @pending_reviews%>
+			<tr>
+				<td><%=time_ago_in_words(review.created_at)%> ago</td>
+				<td><%=link_to(review.item.item_name, :action => "review_detail",:id=>review)%></td>
+				<td><%=link_to(review.user.full_name, :action=> "user_detail",:id=>review.user.id)%></td>
+				<td>
+				<%review.rev_rating.to_i.times do%><img src="/images/st1.gif" width="13" height="13" alt="Rated <%=review.rev_rating.to_i%> stars for quality" /><%end%>
+				</td>
+				<td>
+                <%review.rev_value.to_i.times do%><img src="/images/dlr1.gif" width="13" height="13" alt="Rated <%=review.rev_value.to_i%> stars for value" /><%end%>
+                </td>
+			</tr>
+	    <%end%>
+		</tbody>
+	</table>
+	<h2>Edit item</h2>
+	<form method="post">
+		<select id="all_items" name="all_items">
+			<%for item in @all_items%>
+			<option value="<%=item.id%>"><%=item.item_name + ", " + item.category.cat_name%></option>
+			<%end%>
+		</select>
+		<button type="submit">Go</button>
+	</form>
+	<h2>New items</h2>
+	<table border="0" cellpadding="0" cellspacing="0">
+		<col style="width:20%;" />
+		<col style="width:40%;" />
+		<col style="width:20%;" />
+		<col style="width:20%;" />
+		<thead>
+		  <tr>
+		      <th>Submitted</th>
+		      <th>Item</th>
+		      <th>Category</th>
+		      <th>Subcat</th>
+		      <th>Subsubcat</th>
+		  </tr>
+		<tbody>
+		<%for item in @pending_items%>
+			<tr>
+				<td><%=time_ago_in_words(item.created_at)%> ago</td>
+				<td><%=link_to(item.item_name,:action=>"item_detail",:id=>item)%></td>
+				<td><%=item.category.cat_name%></td>
+				<td><%=item.subcategory.subcat_name%></td>
+				<td><%=item.subsubcategory.subsubcat_name%></td>
+			</tr>
+	    <%end%>
+		</tbody>
+	</table>
+</div>

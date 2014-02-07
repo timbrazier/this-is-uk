@@ -1,0 +1,3 @@
+<%= start_form_tag  :action => 'search_results'%>
+Search:<%= text_field_with_auto_complete :item, :item_name %><input type="submit" value="Go"/>
+<%= end_form_tag %>
